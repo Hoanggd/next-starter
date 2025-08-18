@@ -3,7 +3,7 @@
 import { CheckIcon, ChevronDownIcon, XIcon } from 'lucide-react'
 import React, { useId } from 'react'
 import ReactSelect, { components as RcComponents, Props as ReactSelectProps } from 'react-select'
-import { z } from 'zod'
+import { z } from '@workspace/ui/lib/zod'
 import { cn } from '@workspace/ui/lib/utils'
 
 export const optionSchema = z.object({
@@ -37,9 +37,6 @@ function Select<S extends Option>({
       <ReactSelect
         instanceId={id}
         unstyled
-        onMenuClose={() => {
-          addFadeoutAnimation()
-        }}
         classNames={{
           multiValue: () =>
             'bg-blue-50 text-xs font-medium pl-2 rounded-full mr-1 my-0.5 flex items-center text-blue-600',
@@ -106,39 +103,11 @@ function Select<S extends Option>({
           IndicatorSeparator: () => <div className="w-[1px] h-4 bg-gray-200 mx-1 hidden" />,
           ...components,
         }}
-        closeMenuOnSelect={!props.isMulti}
-        menuShouldBlockScroll={true}
-        hideSelectedOptions={false}
         isDisabled={disabled || isDisabled}
         {...props}
       />
     </div>
   )
-}
-
-function addFadeoutAnimation() {
-  try {
-    const menuEl = document.querySelector(`.select_menu`)
-    const menuListEl = menuEl?.querySelector(`.menu_list`)
-    const containerEl = menuEl?.parentElement
-
-    // Capture the original scroll position
-    const scrollTop = menuListEl?.scrollTop || 0
-
-    const clonedMenuEl = menuEl?.cloneNode(true) as HTMLElement
-    const clonedMenuListEl = clonedMenuEl.querySelector(`.menu_list`) as HTMLElement
-
-    if (!clonedMenuEl || !clonedMenuListEl) return
-
-    clonedMenuEl.classList.add('animate-out', 'fade-out')
-    clonedMenuEl.addEventListener('animationend', () => {
-      containerEl?.removeChild(clonedMenuEl)
-    })
-
-    containerEl?.appendChild(clonedMenuEl!)
-    // Apply the scroll position to the cloned list
-    clonedMenuListEl.scrollTop = scrollTop
-  } catch (error) {}
 }
 
 export { Select }

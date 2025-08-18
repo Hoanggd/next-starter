@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import { Button } from '@repo/ui/button'
-import { Checkbox } from '@repo/ui/checkbox'
-import { DateRangePicker } from '@repo/ui/date-range-picker'
-import { DatePicker } from '@repo/ui/datepicker'
+import { Button } from "@workspace/ui/components/button";
+import { Checkbox } from "@workspace/ui/components/checkbox";
+import { DateRangePicker } from "@workspace/ui/components/date-range-picker";
+import { DatePicker } from "@workspace/ui/components/datepicker";
 import {
   Form,
   FormControl,
@@ -12,79 +12,80 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-  useFieldArray,
-  useForm,
-  useFormContext,
-} from '@repo/ui/form'
-import { Input } from '@repo/ui/input'
-import { RadioGroup } from '@repo/ui/radio-group'
-import { Option, Select } from '@repo/ui/select'
-import { Switch } from '@repo/ui/switch'
-import { Textarea } from '@repo/ui/textarea'
+} from "@workspace/ui/components/form";
+import { Input } from "@workspace/ui/components/input";
+import { RadioGroup } from "@workspace/ui/components/radio-group";
+import { Option, Select } from "@workspace/ui/components/select";
+import { Switch } from "@workspace/ui/components/switch";
+import { Textarea } from "@workspace/ui/components/textarea";
+import { useFieldArray, useForm, useFormContext } from "react-hook-form";
 
 type FormInputs = {
-  isPublic: boolean
-  name: string
-  bio: string
-  birthday: string
-  gender: Option
-  languages: Language[]
-  phoneNumber: string
+  isPublic: boolean;
+  name: string;
+  bio: string;
+  birthday: string;
+  gender: Option;
+  languages: Language[];
+  phoneNumber: string;
   works: {
-    company: string
-    position: string
+    company: string;
+    position: string;
     duration: {
-      start: string
-      end: string
-    }
-  }[]
-  enableNotify?: boolean
-  notifyType: string
-}
+      start: string;
+      end: string;
+    };
+  }[];
+  enableNotify?: boolean;
+  notifyType: string;
+};
 
 type Language = {
-  label: string
-  value: string
-  flag: string
-}
+  label: string;
+  value: string;
+  flag: string;
+};
 
 const languages: Language[] = [
-  { label: 'English - United Kingdom', value: 'GB', flag: '🇬🇧' },
-  { label: 'English - United States', value: 'US', flag: '🇺🇸' },
-  { label: 'French', value: 'FR', flag: '🇫🇷' },
-  { label: 'German', value: 'DE', flag: '🇩🇪' },
-  { label: 'Hindi', value: 'IN', flag: '🇮🇳' },
-  { label: 'Italian', value: 'IT', flag: '🇮🇹' },
-  { label: 'Japanese', value: 'JP', flag: '🇯🇵' },
-  { label: 'Portuguese', value: 'BR', flag: '🇧🇷' },
-  { label: 'Spanish', value: 'MX', flag: '🇲🇽' },
-]
+  { label: "English - United Kingdom", value: "GB", flag: "🇬🇧" },
+  { label: "English - United States", value: "US", flag: "🇺🇸" },
+  { label: "French", value: "FR", flag: "🇫🇷" },
+  { label: "German", value: "DE", flag: "🇩🇪" },
+  { label: "Hindi", value: "IN", flag: "🇮🇳" },
+  { label: "Italian", value: "IT", flag: "🇮🇹" },
+  { label: "Japanese", value: "JP", flag: "🇯🇵" },
+  { label: "Portuguese", value: "BR", flag: "🇧🇷" },
+  { label: "Spanish", value: "MX", flag: "🇲🇽" },
+];
 
-export function LargeForm() {
+export default function LargeForm() {
   const form = useForm<FormInputs>({
     defaultValues: {
       languages: [languages[0]],
     },
-  })
+  });
 
   const onSubmit = (data: FormInputs) => {
-    window.alert(JSON.stringify(data, null, 4))
-  }
+    window.alert(JSON.stringify(data, null, 4));
+  };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="container max-w-[600px] divide-y my-10">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="container max-w-[600px] divide-y my-10"
+      >
         <Profile />
         <WorkHistory />
         <NotifyType />
         <Button type="submit">Submit</Button>
       </form>
     </Form>
-  )
+  );
 }
 
 function Profile() {
-  const form = useFormContext<FormInputs>()
+  const form = useFormContext<FormInputs>();
 
   return (
     <div className="space-y-4 py-6">
@@ -112,9 +113,9 @@ function Profile() {
               <Select
                 {...field}
                 options={[
-                  { label: 'Male', value: 'male' },
-                  { label: 'Female', value: 'female' },
-                  { label: 'Other', value: 'other' },
+                  { label: "Male", value: "male" },
+                  { label: "Female", value: "female" },
+                  { label: "Other", value: "other" },
                 ]}
                 placeholder="Select gender"
               />
@@ -140,7 +141,9 @@ function Profile() {
                     <span className="text-3xl">{option.flag}</span>
                     <div>
                       <div>{option.label}</div>
-                      <div className="text-xs text-muted-foreground">{option.value}</div>
+                      <div className="text-xs text-muted-foreground">
+                        {option.value}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -165,7 +168,9 @@ function Profile() {
               <Textarea {...field} />
             </FormControl>
             <FormMessage />
-            <FormDescription>Brief description for your profile</FormDescription>
+            <FormDescription>
+              Brief description for your profile
+            </FormDescription>
           </FormItem>
         )}
       />
@@ -183,40 +188,42 @@ function Profile() {
         )}
       />
     </div>
-  )
+  );
 }
 
 function Header() {
-  const form = useFormContext<FormInputs>()
+  const form = useFormContext<FormInputs>();
   return (
     <div className="flex justify-between items-center">
       <h2 className="uppercase text-gray-500 text-sm font-semibold">Profile</h2>
       <FormField
         control={form.control}
         name="isPublic"
-        render={({ getCheckboxProps }) => (
-          <FormItem flow="row">
+        render={({ field }) => (
+          <FormItem>
             <FormLabel>Public</FormLabel>
             <FormControl>
-              <Switch {...getCheckboxProps()} />
+              <Switch checked={field.value} onCheckedChange={field.onChange} />
             </FormControl>
           </FormItem>
         )}
       />
     </div>
-  )
+  );
 }
 
 function WorkHistory() {
-  const form = useFormContext<FormInputs>()
+  const form = useFormContext<FormInputs>();
   const { fields, append, remove } = useFieldArray({
     control: form.control,
-    name: 'works',
-  })
+    name: "works",
+  });
 
   return (
     <div className="space-y-2 py-6">
-      <h2 className="uppercase text-gray-500 text-sm font-semibold">Work History</h2>
+      <h2 className="uppercase text-gray-500 text-sm font-semibold">
+        Work History
+      </h2>
       {fields.length > 0 && (
         <div className="space-y-3">
           {fields.map((field, index) => (
@@ -263,7 +270,11 @@ function WorkHistory() {
                 />
               </div>
               <div className="flex justify-end">
-                <Button variant="link" className="px-0 h-7 text-red-500 mt-2" onClick={() => remove(index)}>
+                <Button
+                  variant="link"
+                  className="px-0 h-7 text-red-500 mt-2"
+                  onClick={() => remove(index)}
+                >
                   Delete
                 </Button>
               </div>
@@ -275,31 +286,33 @@ function WorkHistory() {
         variant="outline"
         onClick={() =>
           append({
-            company: '',
-            position: '',
-            duration: { start: '', end: '' },
+            company: "",
+            position: "",
+            duration: { start: "", end: "" },
           })
         }
       >
         + Add Work
       </Button>
     </div>
-  )
+  );
 }
 
 function NotifyType() {
-  const form = useFormContext<FormInputs>()
+  const form = useFormContext<FormInputs>();
 
   return (
     <div className="space-y-4 py-6">
-      <h2 className="uppercase text-gray-500 text-sm font-semibold">Notification</h2>
+      <h2 className="uppercase text-gray-500 text-sm font-semibold">
+        Notification
+      </h2>
       <FormField
         control={form.control}
         name="enableNotify"
-        render={({ getCheckboxProps }) => (
+        render={({ field }) => (
           <FormItem flow="row">
             <FormControl>
-              <Checkbox {...getCheckboxProps()} />
+              <Checkbox checked={field.value} onCheckedChange={field.onChange} />
             </FormControl>
             <FormLabel>Enable notification</FormLabel>
           </FormItem>
@@ -309,15 +322,16 @@ function NotifyType() {
       <FormField
         control={form.control}
         name="notifyType"
-        render={({ getRadioGroupProps }) => (
+        render={({ field }) => (
           <FormItem>
             <FormLabel>Notify me about</FormLabel>
             <FormControl>
               <RadioGroup
-                {...getRadioGroupProps()}
+                value={field.value}
+                onChange={field.onChange}
                 options={[
-                  { label: 'All new messages', value: 'all' },
-                  { label: 'Direct messages and mentions', value: 'mentions' },
+                  { label: "All new messages", value: "all" },
+                  { label: "Direct messages and mentions", value: "mentions" },
                 ]}
               ></RadioGroup>
             </FormControl>
@@ -326,5 +340,5 @@ function NotifyType() {
         )}
       />
     </div>
-  )
+  );
 }
