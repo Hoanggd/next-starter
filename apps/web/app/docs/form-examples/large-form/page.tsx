@@ -75,6 +75,7 @@ export default function LargeForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="container max-w-[600px] divide-y my-10"
       >
+        <h1 className="text-2xl font-semibold pb-4">Large Form</h1>
         <Profile />
         <WorkHistory />
         <NotifyType />

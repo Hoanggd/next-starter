@@ -85,6 +85,14 @@ const data = {
           title: "Large Form",
           url: "/docs/form-examples/large-form",
         },
+        {
+          title: "Parse and Transform",
+          url: "/docs/form-examples/parse-and-transform",
+        },
+        {
+          title: "Submission Error",
+          url: "/docs/form-examples/submission-error",
+        },
       ],
     },
   ],
