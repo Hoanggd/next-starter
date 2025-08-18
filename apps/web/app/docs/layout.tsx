@@ -1,6 +1,6 @@
 'use client'
 
-import { DocSidebar } from "@/app/document/_components/doc-sidebar";
+import { DocsSidebar } from "@/app/docs/_components/docs-sidebar";
 import { Separator } from "@workspace/ui/components/separator";
 import {
   SidebarInset,
@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <SidebarProvider>
-      <DocSidebar />
+      <DocsSidebar />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
@@ -24,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           />
           <div className="text-sm capitalize">{pathname.split("/").pop()?.replace("-", " ")}</div>
         </header>
-        <div className="p-4 container mx-auto max-w-2xl">
+        <div>
             {children}
         </div>
       </SidebarInset>
