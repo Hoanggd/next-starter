@@ -34,7 +34,7 @@ export default function ParseAndTransform() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 max-w-[500px]"
+        className="space-y-4"
       >
         <h1 className="text-2xl font-semibold">Parse and Transform</h1>
         <FormField

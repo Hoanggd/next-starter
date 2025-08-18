@@ -82,16 +82,16 @@ const data = {
           url: "/docs/form-examples/dependant-validation",
         },
         {
-          title: "Large Form",
-          url: "/docs/form-examples/large-form",
-        },
-        {
           title: "Parse and Transform",
           url: "/docs/form-examples/parse-and-transform",
         },
         {
           title: "Submission Error",
           url: "/docs/form-examples/submission-error",
+        },
+        {
+          title: "Large Form",
+          url: "/docs/form-examples/large-form",
         },
       ],
     },

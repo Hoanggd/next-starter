@@ -73,7 +73,7 @@ export default function LargeForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="container max-w-[600px] divide-y my-10"
+        className="container divide-y my-10"
       >
         <h1 className="text-2xl font-semibold pb-4">Large Form</h1>
         <Profile />
@@ -313,7 +313,10 @@ function NotifyType() {
         render={({ field }) => (
           <FormItem flow="row">
             <FormControl>
-              <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+              <Checkbox
+                checked={field.value}
+                onCheckedChange={field.onChange}
+              />
             </FormControl>
             <FormLabel>Enable notification</FormLabel>
           </FormItem>
@@ -325,11 +328,11 @@ function NotifyType() {
         name="notifyType"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Notify me about</FormLabel>
+            <FormLabel>Notify me about {field.value}</FormLabel>
             <FormControl>
               <RadioGroup
-                value={field.value}
-                onChange={field.onChange}
+                onValueChange={field.onChange}
+                defaultValue={field.value}
                 options={[
                   { label: "All new messages", value: "all" },
                   { label: "Direct messages and mentions", value: "mentions" },

@@ -64,7 +64,7 @@ export default function SubmissionErrors() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 container max-w-[500px]"
+        className="space-y-4"
       >
         <h1 className="text-2xl font-semibold">Submission Errors</h1>
         <FormField

@@ -31,7 +31,7 @@ export default function DependantValidationForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 container max-w-[500px]"
+        className="space-y-4"
       >
         <h1 className="text-2xl font-semibold">Dependent Validation Form</h1>
         <FormField
