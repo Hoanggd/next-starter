@@ -7,7 +7,7 @@ import {
   DateValue,
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
-import { fieldGroupStyles } from './Field'
+import { fieldGroupStyles } from './field'
 import { composeTailwindRenderProps } from './utils'
 import { cn } from '@workspace/ui/lib/utils'
 import { I18nProvider as ReactAriaI18nProvider } from 'react-aria-components'

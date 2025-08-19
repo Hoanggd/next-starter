@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { DatePicker as RacDatePicker } from "./react-aria/DatePicker";
+import { DatePicker as RacDatePicker } from "./react-aria/date-picker";
 import { parseDate } from "@internationalized/date";
 
 export const DatePicker = ({

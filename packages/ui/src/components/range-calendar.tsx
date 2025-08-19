@@ -1,3 +1,3 @@
 'use client'
 
-export { RangeCalendar } from './react-aria/RangeCalendar'
+export { RangeCalendar } from './react-aria/range-calendar'

@@ -1,3 +1,3 @@
 'use client'
 
-export { Calendar } from './react-aria/Calendar'
+export { Calendar } from './react-aria/calendar'

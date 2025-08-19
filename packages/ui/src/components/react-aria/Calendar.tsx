@@ -13,7 +13,7 @@ import {
   Text,
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
-import { Button } from './Button'
+import { Button } from './button'
 import { cn } from '@workspace/ui/lib/utils'
 
 const cellStyles = tv({

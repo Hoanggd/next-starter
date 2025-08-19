@@ -5,8 +5,8 @@ import {
   SearchFieldProps as AriaSearchFieldProps,
   ValidationResult,
 } from 'react-aria-components'
-import { Button } from './Button'
-import { Description, FieldError, FieldGroup, Input, Label } from './Field'
+import { Button } from './button'
+import { Description, FieldError, FieldGroup, Input, Label } from './field'
 import { composeTailwindRenderProps } from './utils'
 
 export interface SearchFieldProps extends AriaSearchFieldProps {

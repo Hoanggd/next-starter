@@ -1,17 +1,16 @@
 import { CalendarIcon } from 'lucide-react'
-import React from 'react'
 import {
   DateRangePicker as AriaDateRangePicker,
   DateRangePickerProps as AriaDateRangePickerProps,
   DateValue,
   ValidationResult,
 } from 'react-aria-components'
-import { Button } from './Button'
-import { DateInput } from './DateField'
-import { Dialog } from './Dialog'
-import { Description, FieldError, FieldGroup, Label } from './Field'
-import { Popover } from './Popover'
-import { RangeCalendar } from './RangeCalendar'
+import { Button } from './button'
+import { DateInput } from './date-field'
+import { Dialog } from './dialog'
+import { Description, FieldError, FieldGroup, Label } from './field'
+import { Popover } from './popover'
+import { RangeCalendar } from './range-calendar'
 import { composeTailwindRenderProps } from './utils'
 import { cn } from '@workspace/ui/lib/utils'
 

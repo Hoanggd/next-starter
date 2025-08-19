@@ -4,7 +4,7 @@ import { useState } from "react";
 import {
   DateRangePicker as RacDateRangePicker,
   DateRangePickerProps,
-} from "./react-aria/DateRangePicker";
+} from "./react-aria/date-range-picker";
 import { parseDate } from "@internationalized/date";
 
 type DateRangeValues = { start: string; end: string };

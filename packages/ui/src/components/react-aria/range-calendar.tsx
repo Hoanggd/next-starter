@@ -9,7 +9,7 @@ import {
   Text,
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
-import { CalendarGridHeader, CalendarHeader } from './Calendar'
+import { CalendarGridHeader, CalendarHeader } from './calendar'
 import { focusRing } from './utils'
 import { useIsMobile } from '@workspace/ui/hooks/use-mobile'
 import { range } from 'lodash'
