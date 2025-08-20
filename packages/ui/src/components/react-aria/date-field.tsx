@@ -23,7 +23,7 @@ export function DateField<T extends DateValue>({ ...props }: DateFieldProps<T>) 
 }
 
 const segmentStyles = tv({
-  base: 'inline p-[1px] type-literal:px-0 outline outline-0 caret-transparent rounded-sm',
+  base: 'inline type-literal:px-0 outline outline-0 caret-transparent rounded-xs',
   variants: {
     isDisabled: {
       true: 'text-gray-200',

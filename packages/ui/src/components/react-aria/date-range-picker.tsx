@@ -39,7 +39,7 @@ export function DateRangePicker<T extends DateValue>({
           <span
             aria-hidden="true"
             className={cn(
-              'leading-[1] forced-colors:text-[ButtonText] group-disabled:text-gray-200 group-disabled:dark:text-gray-600 group-disabled:forced-colors:text-[GrayText]',
+              'leading-[1] forced-colors:text-[ButtonText] group-disabled:text-neutral-200 group-disabled:dark:text-neutral-600 group-disabled:forced-colors:text-[neutralText]',
               !props.value && 'text-muted-foreground',
             )}
           >
@@ -50,7 +50,7 @@ export function DateRangePicker<T extends DateValue>({
         <Button
           variant="icon"
           aria-label="Open calendar"
-          className="w-[26px] h-[26px] mr-1.5 rounded-full outline-offset-0 text-gray-400 data-[pressed=true]:bg-gray-200 data-[pressed=true]:text-gray-500"
+          className="w-[26px] h-[26px] mr-1.5 rounded-full outline-offset-0 text-neutral-400 data-[pressed=true]:bg-neutral-200 data-[pressed=true]:text-neutral-500"
         >
           <CalendarIcon aria-hidden className="w-4 h-4" />
         </Button>

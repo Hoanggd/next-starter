@@ -21,12 +21,12 @@ export interface RangeCalendarProps<T extends DateValue> extends Omit<AriaRangeC
 
 const cell = tv({
   extend: focusRing,
-  base: 'w-full h-full flex items-center justify-center rounded-full forced-color-adjust-none text-sm font-medium text-gray-600 dark:text-gray-200',
+  base: 'w-full h-full flex items-center justify-center rounded-full forced-color-adjust-none text-sm font-medium text-neutral-600 dark:text-neutral-200',
   variants: {
     selectionState: {
-      none: 'group-hover:bg-gray-600/10 group-pressed:bg-gray-200',
+      none: 'group-hover:bg-neutral-600/10 group-pressed:bg-neutral-200',
       middle: [
-        'group-hover:bg-gray-300 forced-colors:group-hover:bg-[Highlight]',
+        'group-hover:bg-neutral-300 forced-colors:group-hover:bg-[Highlight]',
         'group-invalid:group-hover:bg-red-200 forced-colors:group-invalid:group-hover:bg-[Mark]',
         'group-pressed:bg-blue-300 forced-colors:group-pressed:bg-[Highlight] forced-colors:text-[HighlightText]',
         'group-invalid:group-pressed:bg-red-300 forced-colors:group-invalid:group-pressed:bg-[Mark]',
@@ -34,7 +34,7 @@ const cell = tv({
       cap: 'bg-primary group-invalid:bg-red-600 forced-colors:bg-[Highlight] forced-colors:group-invalid:bg-[Mark] text-white forced-colors:text-[HighlightText]',
     },
     isDisabled: {
-      true: 'text-gray-300',
+      true: 'text-neutral-300',
     },
   },
 })
@@ -55,7 +55,7 @@ export function RangeCalendar<T extends DateValue>({ errorMessage, className, ..
                 <CalendarCell
                   date={date}
                   className={cn(
-                    'group text-sm outline outline-0 cursor-default data-[outside-month=true]:hidden',
+                    'group text-sm outline-0 cursor-default data-[outside-month=true]:hidden mb-1',
                     '[td:first-child_&_div]:rounded-s-full [td:last-child_&_div]:rounded-e-full',
                   )}
                 >
@@ -71,11 +71,11 @@ export function RangeCalendar<T extends DateValue>({ errorMessage, className, ..
                       <div
                         className={cn(
                           'w-8 h-8',
-                          isSelected && 'bg-gray-600/10',
+                          isSelected && 'bg-neutral-600/10',
                           isSelectionStart && 'rounded-s-full',
                           isSelectionEnd && 'rounded-e-full',
-                          fadeRight && 'bg-transparent bg-gradient-to-r from-gray-600/10 to-gray-600/0',
-                          fadeLeft && 'bg-transparent bg-gradient-to-l from-gray-600/10 to-gray-600/0',
+                          fadeRight && 'bg-transparent bg-gradient-to-r from-neutral-600/10 to-neutral-600/0',
+                          fadeLeft && 'bg-transparent bg-gradient-to-l from-neutral-600/10 to-neutral-600/0',
                         )}
                       >
                         <span

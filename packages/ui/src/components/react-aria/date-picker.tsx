@@ -19,7 +19,7 @@ export function DatePicker<T extends DateValue>({ ...props }: DatePickerProps<T>
           variant="icon"
           aria-label="Open calendar"
           aria-labelledby="open-calendar"
-          className="w-[26px] h-[26px] mr-1.5 rounded-full outline-offset-0 text-gray-400 data-[pressed=true]:bg-gray-200 data-[pressed=true]:text-gray-500"
+          className="w-[26px] h-[26px] mr-1.5 rounded-full outline-offset-0 text-neutral-400 data-[pressed=true]:bg-neutral-200 data-[pressed=true]:text-neutral-500"
         >
           <CalendarIcon aria-hidden className="w-4 h-4" />
         </Button>
