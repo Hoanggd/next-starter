@@ -48,7 +48,7 @@ const PERMISSIONS = [
 export default function ConditionalFieldsForm() {
   const form = useForm<FormInputs>({
     defaultValues: {
-      role: ROLES[0],
+      role: undefined,
       name: "",
     },
   });
@@ -70,7 +70,7 @@ export default function ConditionalFieldsForm() {
           rules={{ validate: optionSchema.validateFn() }}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Role </FormLabel>
+              <FormLabel>Role</FormLabel>
               <FormControl>
                 <Select {...field} options={ROLES} isSearchable={false} />
               </FormControl>

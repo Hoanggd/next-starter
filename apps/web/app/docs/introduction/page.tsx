@@ -13,7 +13,7 @@ export default function GettingStartedPage() {
         components to cover those gaps.
       </div>
       <div>
-        <Button variant="link" asChild className="text-blue-600 px-0">
+        <Button variant="link" asChild className="text-primary px-0">
           <a href="https://ui.shadcn.com/" target="_blank">
             https://ui.shadcn.com
           </a>

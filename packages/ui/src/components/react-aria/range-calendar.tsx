@@ -31,7 +31,7 @@ const cell = tv({
         'group-pressed:bg-blue-300 forced-colors:group-pressed:bg-[Highlight] forced-colors:text-[HighlightText]',
         'group-invalid:group-pressed:bg-red-300 forced-colors:group-invalid:group-pressed:bg-[Mark]',
       ],
-      cap: 'bg-blue-600 group-invalid:bg-red-600 forced-colors:bg-[Highlight] forced-colors:group-invalid:bg-[Mark] text-white forced-colors:text-[HighlightText]',
+      cap: 'bg-primary group-invalid:bg-red-600 forced-colors:bg-[Highlight] forced-colors:group-invalid:bg-[Mark] text-white forced-colors:text-[HighlightText]',
     },
     isDisabled: {
       true: 'text-gray-300',

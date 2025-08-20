@@ -13,6 +13,7 @@ import { Textarea } from "@workspace/ui/components/textarea";
 import { useFormContext } from "react-hook-form";
 import { FormInputs, languages } from "./utils";
 import { Switch } from "@workspace/ui/components/switch";
+import { MultiSelect } from "@workspace/ui/components/multi-select";
 
 export function Profile() {
   const form = useFormContext<FormInputs>();
@@ -20,6 +21,7 @@ export function Profile() {
   return (
     <div className="space-y-4 py-6">
       <Header />
+      <MultiSelect />
       <FormField
         control={form.control}
         name="name"
@@ -41,7 +43,10 @@ export function Profile() {
             <FormLabel>Gender</FormLabel>
             <FormControl>
               <Select
-                {...field}
+                value={field.value}
+                onChange={(v) => {
+                  field.onChange(v);
+                }}
                 options={[
                   { label: "Male", value: "male" },
                   { label: "Female", value: "female" },
@@ -54,7 +59,7 @@ export function Profile() {
           </FormItem>
         )}
       />
-      <FormField
+      {/* <FormField
         control={form.control}
         name="languages"
         render={({ field }) => (
@@ -62,8 +67,10 @@ export function Profile() {
             <FormLabel>Languages</FormLabel>
             <FormControl>
               <Select
-                {...field}
                 isMulti
+                onChange={v => {
+                  console.log(v)
+                }}
                 options={languages}
                 placeholder="Select languages"
                 renderOption={(option) => (
@@ -87,7 +94,7 @@ export function Profile() {
             <FormMessage />
           </FormItem>
         )}
-      />
+      /> */}
       <FormField
         control={form.control}
         name="bio"
