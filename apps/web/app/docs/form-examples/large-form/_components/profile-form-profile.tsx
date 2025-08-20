@@ -29,7 +29,7 @@ export function Profile() {
           <FormItem>
             <FormLabel>Email</FormLabel>
             <FormControl>
-              <Input {...field} placeholder="Email" />
+              <Input {...field} placeholder="Email" disabled />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -52,7 +52,6 @@ export function Profile() {
                   { label: "Female", value: "female" },
                   { label: "Other", value: "other" },
                 ]}
-                placeholder="Select gender"
               />
             </FormControl>
             <FormMessage />

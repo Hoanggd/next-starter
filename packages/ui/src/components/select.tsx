@@ -28,14 +28,15 @@ export const optionSchema = z.object({
 export type Option = z.infer<typeof optionSchema>;
 
 type SelectProps<S> = {
+  options: S[];
   value?: S;
   onChange?: (value: S) => void;
-  options: S[];
   ["aria-invalid"]?: boolean;
   renderOption?: (data: S) => React.ReactNode;
   renderMultiValueLabel?: (data: S) => React.ReactNode;
   renderSingleValue?: (data: S) => React.ReactNode;
   disabled?: boolean;
+  showSearch?: boolean;
 };
 
 export function Select<S extends Option>({
@@ -43,6 +44,8 @@ export function Select<S extends Option>({
   value: controlledValue,
   onChange: controlledOnChange,
   "aria-invalid": ariaInvalid,
+  disabled,
+  showSearch,
 }: SelectProps<S>) {
   const [open, setOpen] = React.useState(false);
   const [uncontrolledValue, setUncontrolledValue] = React.useState<
@@ -53,14 +56,17 @@ export function Select<S extends Option>({
   const onChange = controlledOnChange ?? setUncontrolledValue;
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={disabled ? undefined : setOpen}>
       <PopoverTrigger asChild>
         <Button
           variant="outline"
           role="combobox"
           aria-expanded={open}
           aria-invalid={ariaInvalid}
-          className={cn("w-full justify-between px-2.5! font-normal")}
+          className={cn(
+            "w-full justify-between px-2.5! font-normal",
+            disabled && "opacity-80 hover:bg-transparent cursor-not-allowed"
+          )}
         >
           {value ? (
             options.find((option) => option.value === value.value)?.label
@@ -71,17 +77,17 @@ export function Select<S extends Option>({
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="w-[var(--radix-popover-trigger-width)] p-0"
+        className="w-[var(--radix-popover-trigger-width)] p-0 data-[state=open]:animate-none"
         side="bottom"
         align="start"
       >
         <Command className="bg-transparent">
-          <CommandInput placeholder="Search" className="h-9" />
+          {showSearch && <CommandInput placeholder="Search" className="h-9" />}
           <CommandList>
             <CommandEmpty>No option found.</CommandEmpty>
             <CommandGroup>
               {options.map((option) => (
-                <CommandItem
+                <CommandItem  
                   key={option.value}
                   value={option.value}
                   onSelect={() => {
