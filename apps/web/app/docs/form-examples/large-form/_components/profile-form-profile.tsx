@@ -131,7 +131,7 @@ function Header() {
   const form = useFormContext<FormInputs>();
   return (
     <div className="flex justify-between items-center">
-      <h2 className="uppercase text-gray-500 text-sm font-semibold">Profile</h2>
+      <h2 className="uppercase text-neutral-500 text-sm font-semibold">Profile</h2>
       <FormField
         control={form.control}
         name="isPublic"

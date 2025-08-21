@@ -22,7 +22,7 @@ export function WorkHistory() {
 
   return (
     <div className="space-y-2 py-6">
-      <h2 className="uppercase text-gray-500 text-sm font-semibold">
+      <h2 className="uppercase text-neutral-500 text-sm font-semibold">
         Work History
       </h2>
       {fields.length > 0 && (

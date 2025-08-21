@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@repo/ui/button'
+import { Button } from '@workspace/ui/components/button'
 import {
   Form,
   FormControl,
@@ -11,8 +11,8 @@ import {
   useFieldArray,
   useForm,
   useFormContext,
-} from '@repo/ui/form'
-import { Input } from '@repo/ui/input'
+} from '@workspace/ui/components/form'
+import { Input } from '@workspace/ui/components/input'
 import { Trash } from 'lucide-react'
 import { z } from '@workspace/ui/lib/zod'
 

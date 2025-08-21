@@ -12,6 +12,8 @@ import { cn } from "@workspace/ui/lib/utils"
 const buttonVariants = cva(
   [
     "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all",
+    /* SVGs */
+    '[&_svg]:pointer-events-none [&_svg]:size-[14px] [&_svg]:shrink-0 [&_svg]:stroke-[2.5]',
     /* Disabled */
     "data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ",
     /* Focus Visible */
@@ -32,12 +34,13 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground data-[hovered]:bg-secondary/80",
         ghost: "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
         link: "text-primary underline-offset-4 data-[hovered]:underline",
+        unstyled: "bg-transparent text-inherit",
       },
       size: {
         default: "h-9 px-3 py-2",
         sm: "h-8 px-2",
         lg: "h-10 px-6",
-        icon: "size-10",
+        icon: "size-8",
       },
     },
     defaultVariants: {
