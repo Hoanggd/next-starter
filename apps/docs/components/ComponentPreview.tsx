@@ -17,7 +17,7 @@ export async function ComponentPreview({ name, className }: ComponentPreviewProp
 
   return (
     <div className="border-b p-10 pt-0 w-full">
-      <div className="p-1.5 space-y-1.5 border rounded-lg bg-white">
+      <div className="p-2 space-y-1.5 border rounded-xl bg-white">
         <div
           className={cn('p-10 flex items-center justify-center not-prose', className)}
         >

@@ -30,16 +30,16 @@ export function DocsLayout({ children, tocs }: { children: React.ReactNode; tocs
         <div className="min-h-screen grid grid-cols-[260px_1fr_260px] max-w-[1280px] w-full">
           <div className="h-full">
             <div className="w-[260px] h-full fixed border-l pt-16">
-              <ModulePicker />
+              {/* <ModulePicker /> */}
               <SidebarMenu />
             </div>
           </div>
 
           {/* main content */}
-          <div className="h-full pt-16 border-x grid grid-cols-[40px_1fr_40px]">
-            <div className="bg-[image:repeating-linear-gradient(315deg,_#F3F4F6_0,_#F3F4F6_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+          <div className="h-full pt-16 border-x grid grid-cols-[40px_1fr_40px] bg-neutral-100/50">
+            <div className="bg-[image:repeating-linear-gradient(315deg,_#E5E5E5_0,_#E5E5E5_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
             <div className="border-x">{children}</div>
-            <div className="bg-[image:repeating-linear-gradient(315deg,_#F3F4F6_0,_#F3F4F6_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+            <div className="bg-[image:repeating-linear-gradient(315deg,_#E5E5E5_0,_#E5E5E5_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
           </div>
           <div className="h-full py-16">
             <div className="w-[260px] h-full fixed border-r">{tocs}</div>

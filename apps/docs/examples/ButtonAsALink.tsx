@@ -1,13 +1,11 @@
-import { Button } from '@workspace/ui/components/button'
-import { SquareArrowOutUpRight } from 'lucide-react'
+import { Link } from "@workspace/ui/components/link";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export const ButtonAsALink = () => {
   return (
-    <Button asChild>
-      <a href="https://ui.shadcn.com/" target="_blank">
-        Shadcn UI
-        <SquareArrowOutUpRight />
-      </a>
-    </Button>
-  )
-}
+    <Link variant={'default'} href="https://ui.shadcn.com/" target="_blank">
+      Shadcn UI
+      <SquareArrowOutUpRight />
+    </Link>
+  );
+};
