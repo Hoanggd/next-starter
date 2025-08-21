@@ -116,7 +116,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-  --shadow-popover: 0 10px 25px 0 rgba(0,0,0,0.1);
+  --shadow-popover: 0 10px 25px 0 rgba(0, 0, 0, 0.1);
 }
 
 @layer base {
@@ -129,7 +129,15 @@
 }
 
 @layer utilities {
-  .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-primary/15 focus-visible:ring-3 focus-visible:border-primary;
+  .focus-ring-button {
+    @apply data-[focus-visible]:border-primary data-[focus-visible]:outline-none data-[focus-visible]:ring-primary/30 data-[focus-visible]:ring-2 data-[focus-visible]:ring-offset-2;
+  }
+
+  .focus-ring-button-outline {
+    @apply data-[focus-visible]:border-primary data-[focus-visible]:outline-none data-[focus-visible]:ring-primary/15 data-[focus-visible]:ring-3 data-[focus-visible]:ring-offset-0;
+  }
+
+  .focus-ring-input {
+    @apply transition-all data-[focused]:border-primary data-[focused]:outline-none data-[focused]:ring-primary/15 data-[focused]:ring-3 data-[focused]:ring-offset-0 aria-invalid:border-destructive;
   }
 }

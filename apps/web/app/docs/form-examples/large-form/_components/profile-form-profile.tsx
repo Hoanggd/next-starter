@@ -7,7 +7,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
-import { Input } from "@workspace/ui/components/input";
+import { Input } from "@workspace/ui/components/textfield";
 import { Select } from "@workspace/ui/components/select";
 import { Textarea } from "@workspace/ui/components/textarea";
 import { useFormContext } from "react-hook-form";
