@@ -11,7 +11,8 @@ import { cn } from "@workspace/ui/lib/utils"
 
 const buttonVariants = cva(
   [
-    "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all",
+    "inline-flex items-center gap-1 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all",
+    "data-[hovered]:opacity-90 data-[pressed]:opacity-100",
     /* SVGs */
     '[&_svg]:pointer-events-none [&_svg]:size-[14px] [&_svg]:shrink-0 [&_svg]:stroke-[2.5]',
     /* Disabled */
@@ -25,21 +26,21 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground data-[hovered]:bg-primary/90 border border-black/10 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]",
+          "bg-linear-to-b from-primary/90 to-primary text-primary-foreground button-3d",
         destructive:
-          "bg-destructive text-destructive-foreground data-[hovered]:bg-destructive/90",
+          "bg-linear-to-b from-destructive/90 to-destructive text-white button-3d",
         outline:
-          "shadow-sm border border-input bg-background data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+          "bg-linear-to-b fromt-white to-neutral-50 shadow-sm border border-input",
         secondary:
           "bg-secondary text-secondary-foreground data-[hovered]:bg-secondary/80",
-        ghost: "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+        ghost: "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground data-[pressed]:bg-accent/50",
         link: "text-primary underline-offset-4 data-[hovered]:underline",
-        unstyled: "bg-transparent text-inherit",
+        unstyled: "",
       },
       size: {
-        default: "h-9 px-3 py-2",
-        sm: "h-8 px-2",
-        lg: "h-10 px-6",
+        default: "h-8 px-3 py-2",
+        sm: "h-7 px-2",
+        lg: "h-9 px-6",
         icon: "size-8",
       },
     },

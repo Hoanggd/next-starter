@@ -141,4 +141,8 @@
   .focus-ring-input {
     @apply transition-all data-[focused]:border-primary data-[focused]:outline-none data-[focused]:ring-primary/15 data-[focused]:ring-3 data-[focused]:ring-offset-0 aria-invalid:border-destructive;
   }
+
+  .button-3d {
+    @apply border border-black/10 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)];
+  }
 }
