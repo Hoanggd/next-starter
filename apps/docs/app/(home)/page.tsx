@@ -111,7 +111,8 @@ export default function Home() {
             <Logo />
           </div>
           <p className="text-muted-foreground mb-4">
-            Built with ❤️ by the Sophon team
+            Built with ❤️ using React Aria, Tailwind CSS, and modern web
+            standards.
           </p>
         </div>
       </footer>

@@ -36,7 +36,7 @@ export function DocsLayout({ children, tocs }: { children: React.ReactNode; tocs
           </div>
 
           {/* main content */}
-          <div className="h-full pt-16 border-x grid grid-cols-[40px_1fr_40px] bg-background-secondary">
+          <div className="h-full pt-16 border-x grid grid-cols-[40px_1fr_40px] bg-background-secondary/80">
             <div className="bg-[image:repeating-linear-gradient(315deg,var(--background-tertiary)_0,var(--background-tertiary)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
             <div className="border-x">{children}</div>
             <div className="bg-[image:repeating-linear-gradient(315deg,var(--background-tertiary)_0,var(--background-tertiary)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>

@@ -62,7 +62,8 @@ export default async function DocPage({ params }: DocPageProps) {
       <article
         className={cn(
           "prose dark:prose-invert prose-neutral prose:prose-h2:mt-10 mb-6 max-w-full min-w-0 w-full py-10",
-          "prose-headings:font-medium prose-h1:tracking-tight prose-h1:font-semibold prose-headings:scroll-mt-20"
+          "prose-headings:font-semibold prose-h1:tracking-tight prose-h1:font-bold prose-headings:scroll-mt-20",
+          "prose-blockquote:border-none prose-blockquote:font-normal"
         )}
       >
         <div className="mb-10 px-10 border-b pb-10">
