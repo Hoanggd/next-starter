@@ -1,4 +1,3 @@
-import { DocsLayout } from "@/layouts/Docs/DocsLayout";
 import "@workspace/ui/globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
@@ -36,7 +35,7 @@ export default function RootLayout({
           disableTransitionOnChange
           enableColorScheme
         >
-          <DocsLayout tocs={<div id="toc"></div>}>{children}</DocsLayout>
+          {children}
           <SonnerToaster />
           <Toaster />
         </ThemeProvider>
