@@ -43,7 +43,7 @@ export function DefaultLayout({ children }: { children: React.ReactNode }) {
         <div className="sticky top-10 flex flex-col gap-8">
           {sidebarGroups.map((group, index) => (
             <div key={index} className="flex flex-col gap-1">
-              {group.label && <h2 className="text-sm font-medium text-gray-400 ">{group.label}</h2>}
+              {group.label && <h2 className="text-sm font-medium text-neutral-400 ">{group.label}</h2>}
               {group.links.map((link) => (
                 <ActiveLink href={link.to} key={link.to}>
                   {link.children}
@@ -63,7 +63,7 @@ function ActiveLink({ href, children }: { href: string; children: React.ReactNod
   const pathname = usePathname()
   const isActive = pathname === href
   return (
-    <Link href={href} className={isActive ? 'text-gray-800 font-medium' : ''}>
+    <Link href={href} className={isActive ? 'text-neutral-800 font-medium' : ''}>
       {children}
     </Link>
   )

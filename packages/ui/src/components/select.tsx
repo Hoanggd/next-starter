@@ -50,17 +50,17 @@ export function Select() {
           <SearchField
             aria-label="Search"
             autoFocus
-            className="group flex items-center bg-white border-2 border-gray-300 has-focus:border-sky-600 rounded-full m-1"
+            className="group flex items-center bg-white border-2 border-neutral-300 has-focus:border-sky-600 rounded-full m-1"
           >
             <SearchIcon
               aria-hidden
-              className="w-4 h-4 ml-2 text-gray-600 forced-colors:text-[ButtonText]"
+              className="w-4 h-4 ml-2 text-neutral-600 forced-colors:text-[ButtonText]"
             />
             <Input
               placeholder="Search"
-              className="px-2 py-1 flex-1 min-w-0 border-none outline outline-0 bg-white text-base text-gray-800 placeholder-gray-500 font-[inherit] [&::-webkit-search-cancel-button]:hidden"
+              className="px-2 py-1 flex-1 min-w-0 border-none outline outline-0 bg-white text-base text-neutral-800 placeholder-neutral-500 font-[inherit] [&::-webkit-search-cancel-button]:hidden"
             />
-            <Button className="text-sm text-center transition rounded-full border-0 p-1 flex items-center justify-center text-gray-600 bg-transparent hover:bg-black/[5%] pressed:bg-black/10 mr-1 w-6 group-empty:invisible">
+            <Button className="text-sm text-center transition rounded-full border-0 p-1 flex items-center justify-center text-neutral-600 bg-transparent hover:bg-black/[5%] pressed:bg-black/10 mr-1 w-6 group-empty:invisible">
               <XIcon aria-hidden className="w-4 h-4" />
             </Button>
           </SearchField>
@@ -81,7 +81,7 @@ function SelectItem(props: ListBoxItemProps & { children: string }) {
     <ListBoxItem
       {...props}
       textValue={props.children}
-      className="group flex items-center gap-2 cursor-default select-none py-2 px-4 outline-hidden rounded-sm text-gray-900 data-focused:bg-sky-600 data-focused:text-white"
+      className="group flex items-center gap-2 cursor-default select-none py-2 px-4 outline-hidden rounded-sm text-neutral-900 data-focused:bg-sky-600 data-focused:text-white"
     >
       {({ isSelected }) => (
         <>
