@@ -1,4 +1,3 @@
-import { cn } from '@workspace/ui/lib/utils'
 import * as React from 'react'
 
 export function DarkModeIcon({ className }: { className?: string }) {
@@ -9,10 +8,10 @@ export function DarkModeIcon({ className }: { className?: string }) {
       height="1em"
       fill="none"
       viewBox="0 0 16 16"
-      className={cn('text-[#4B5563]', className)}
+      className={className}
     >
       <path
-        stroke="#4B5563"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.333"

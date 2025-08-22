@@ -10,8 +10,8 @@ export function CrossIcon({ className }: { className?: string }) {
       viewBox="0 0 23 23"
       className={className}
     >
-      <path fill="#FAFAFA" d="M0 0h23v23H0z"></path>
-      <path stroke="#E5E5E5" d="M4 11.5h8M11 11.5h8M11.5 11v8M11.5 4v8"></path>
+      <path fill="var(--background)" d="M0 0h23v23H0z"></path>
+      <path stroke="var(--color-border)" d="M4 11.5h8M11 11.5h8M11.5 11v8M11.5 4v8"></path>
     </svg>
   )
 }

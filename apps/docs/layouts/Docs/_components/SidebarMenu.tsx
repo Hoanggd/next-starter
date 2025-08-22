@@ -83,16 +83,16 @@ export function SidebarMenu() {
 
   return (
     <div className="relative h-full z-[1]">
-      <div className="absolute z-[1] top-0 left-0 right-6 h-5 bg-gradient-to-b from-neutral-50 to-transparent pointer-events-none"></div>
+      <div className="absolute z-[1] top-0 left-0 right-6 h-5 bg-gradient-to-b from-background to-transparent pointer-events-none"></div>
       <div className="absolute inset-0">
         <ScrollArea className="h-full  -translate-x-px">
           <div className="">
             <div className="pb-24">
-              <div className="h-2" />
+              <div className="h-10" />
               {groups.map((group) => (
                 <div className="mb-5 space-y-1" key={group.title}>
                   <div>
-                    <h3 className="px-6 flex items-center text-xs h-8 font-semibold uppercase tracking-wide text-neutral-400">
+                    <h3 className="px-6 flex items-center text-xs uppercase tracking-wide text-muted-foreground/70">
                       {group.title}
                     </h3>
                   </div>
@@ -116,10 +116,10 @@ function MenuItem({ title, href }: MenuItem) {
   return (
     <Link
       className={cn(
-        "flex items-center text-sm px-[23px] h-7 transition-colors text-neutral-700 border-l border-transparent",
+        "flex items-center text-sm px-[23px] h-8 transition-colors text-muted-foreground border-l border-transparent focus-visible:outline-none focus-visible:bg-background-secondary",
         isActive
-          ? "text-neutral-800 font-medium border-neutral-800"
-          : "hover:text-neutral-800 hover:border-neutral-400"
+          ? "text-foreground border-foreground"
+          : "hover:text-foreground hover:border-foreground/20"
       )}
       href={href}
     >

@@ -87,10 +87,10 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
             <a
               href={item.url}
               className={cn(
-                'flex text-sm items-center min-h-8 py-1 text-gray-500 border-l border-transparent',
+                'flex text-sm items-center min-h-8 py-1 text-muted-foreground border-l border-transparent',
                 item.url === `#${activeItem}`
-                  ? 'text-gray-800 border-gray-800 font-medium'
-                  : 'hover:text-gray-800 hover:border-gray-400',
+                  ? 'text-foreground border-foreground'
+                  : 'hover:text-foreground hover:border-foreground/20',
               )}
               style={{ paddingLeft: `${level * 16}px` }}
             >

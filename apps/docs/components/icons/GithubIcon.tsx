@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { cn } from '@workspace/ui/lib/utils'
 
 export function GithubIcon({ className }: { className?: string }) {
   return (
@@ -9,7 +8,7 @@ export function GithubIcon({ className }: { className?: string }) {
       height="1em"
       fill="none"
       viewBox="0 0 18 18"
-      className={cn('text-[#4B5563]', className)}
+      className={className}
     >
       <path
         fill="currentColor"
