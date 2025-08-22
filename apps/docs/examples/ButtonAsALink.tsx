@@ -3,8 +3,8 @@ import { SquareArrowOutUpRight } from "lucide-react";
 
 export const ButtonAsALink = () => {
   return (
-    <Link variant={'default'} href="https://ui.shadcn.com/" target="_blank">
-      Shadcn UI
+    <Link variant={'default'} href="https://react-spectrum.adobe.com/react-aria/index.html" target="_blank">
+      React Aria Components
       <SquareArrowOutUpRight />
     </Link>
   );

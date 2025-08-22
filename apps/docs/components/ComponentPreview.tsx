@@ -25,7 +25,7 @@ export async function ComponentPreview({ name, className }: ComponentPreviewProp
         </div>
 
         <div className="relative border rounded-md overflow-hidden ">
-          <CopyToClipboard text={code} className="absolute right-4 top-4 z-[1]" />
+          <CopyToClipboard text={code} className="absolute right-2 top-2 z-[1]" />
           <div className="">
             <ScrollArea className="grid">
               <div

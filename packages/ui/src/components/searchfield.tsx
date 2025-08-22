@@ -68,7 +68,7 @@ function SearchFieldClear({ className, ...props }: AriaButtonProps) {
     <AriaButton
       className={composeRenderProps(className, (className) =>
         cn(
-          "mr-1 rounded-sm opacity-70 ring-offset-background transition-opacity",
+          "rounded-sm opacity-70 ring-offset-background transition-opacity",
           /* Hover */
           "data-[hovered]:opacity-100",
           /* Disabled */
@@ -87,6 +87,7 @@ interface SPSearchFieldProps extends AriaSearchFieldProps {
   label?: string
   description?: string
   errorMessage?: string | ((validation: AriaValidationResult) => string)
+  placeholder?: string
 }
 
 function SPSearchField({
@@ -94,6 +95,7 @@ function SPSearchField({
   description,
   className,
   errorMessage,
+  placeholder = 'Search...',
   ...props
 }: SPSearchFieldProps) {
   return (
@@ -103,10 +105,10 @@ function SPSearchField({
       )}
       {...props}
     >
-      <Label>{label}</Label>
+      {label && <Label>{label}</Label>}
       <FieldGroup>
         <SearchIcon aria-hidden className="size-4 text-muted-foreground" />
-        <SearchFieldInput placeholder="Search..." />
+        <SearchFieldInput placeholder={placeholder} />
         <SearchFieldClear>
           <XIcon aria-hidden className="size-4" />
         </SearchFieldClear>

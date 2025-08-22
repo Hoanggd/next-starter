@@ -3,7 +3,7 @@ import { Trash } from 'lucide-react'
 
 export const ButtonIcon = () => {
   return (
-    <Button size="icon">
+    <Button size="icon" variant="ghost">
       <Trash />
     </Button>
   )

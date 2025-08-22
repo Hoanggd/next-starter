@@ -1,69 +1,85 @@
-'use client'
-import { ModuleValue, useModulePicker } from '@/layouts/Docs/_components/ModulePicker'
-import { ScrollArea } from '@workspace/ui/components/scroll-area'
-import { cn } from '@workspace/ui/lib/utils'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import React from 'react'
+"use client";
+import {
+  ModuleValue,
+  useModulePicker,
+} from "@/layouts/Docs/_components/ModulePicker";
+import { ScrollArea } from "@workspace/ui/components/scroll-area";
+import { cn } from "@workspace/ui/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
 
 type MenuItem = {
-  title: string
-  href: string
-}
+  title: string;
+  href: string;
+};
 
 type MenuGroup = {
-  title: string
-  items: MenuItem[]
-}
+  title: string;
+  items: MenuItem[];
+};
 
 function getMenuGroups(module: string): MenuGroup[] {
   if (module === ModuleValue.UI) {
     return [
       {
-        title: 'Getting Started',
+        title: "Getting Started",
         items: [
           {
-            title: 'Introduction',
-            href: '/docs/ui/introduction',
+            title: "Introduction",
+            href: "/docs/ui/introduction",
           },
           {
-            title: 'Installation',
-            href: '/docs/ui/installation',
+            title: "Installation",
+            href: "/docs/ui/installation",
           },
         ],
       },
       {
-        title: 'Button',
+        title: "Buttons",
         items: [
           {
-            title: 'Button',
-            href: '/docs/ui/button',
+            title: "Button",
+            href: "/docs/ui/button",
           },
         ],
       },
-    ]
+      {
+        title: "Forms",
+        items: [
+          {
+            title: "Checkbox",
+            href: "/docs/ui/checkbox",
+          },
+          {
+            title: "Textfield",
+            href: "/docs/ui/textfield",
+          },
+        ],
+      },
+    ];
   }
 
   if (module === ModuleValue.Form) {
     return [
       {
-        title: 'Forms',
+        title: "Forms",
         items: [],
       },
-    ]
+    ];
   }
 
   return [
     {
-      title: 'Templates',
+      title: "Templates",
       items: [],
     },
-  ]
+  ];
 }
 
 export function SidebarMenu() {
-  const selectedModule = useModulePicker()
-  const groups = getMenuGroups(selectedModule.value)
+  const selectedModule = useModulePicker();
+  const groups = getMenuGroups(selectedModule.value);
 
   return (
     <div className="relative h-full z-[1]">
@@ -90,22 +106,24 @@ export function SidebarMenu() {
         </ScrollArea>
       </div>
     </div>
-  )
+  );
 }
 
 function MenuItem({ title, href }: MenuItem) {
-  const pathname = usePathname()
-  const isActive = pathname === href
+  const pathname = usePathname();
+  const isActive = pathname === href;
 
   return (
     <Link
       className={cn(
-        'flex items-center text-sm px-[23px] h-7 transition-colors text-neutral-700 border-l border-transparent',
-        isActive ? 'text-neutral-800 font-medium border-neutral-800' : 'hover:text-neutral-800 hover:border-neutral-400',
+        "flex items-center text-sm px-[23px] h-7 transition-colors text-neutral-700 border-l border-transparent",
+        isActive
+          ? "text-neutral-800 font-medium border-neutral-800"
+          : "hover:text-neutral-800 hover:border-neutral-400"
       )}
       href={href}
     >
       {title}
     </Link>
-  )
+  );
 }

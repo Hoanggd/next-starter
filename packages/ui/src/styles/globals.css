@@ -127,6 +127,16 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Scroll margin for headings in prose */
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    scroll-margin-top: 80px;
+  }
 }
 
 @layer utilities {
@@ -140,6 +150,10 @@
 
   .focus-ring-input {
     @apply transition-all data-[focused]:border-primary data-[focused]:outline-none data-[focused]:ring-primary/15 data-[focused]:ring-3 data-[focused]:ring-offset-0 aria-invalid:border-destructive;
+  }
+
+  .focus-within-ring-input {
+    @apply transition-all data-[focus-within]:border-primary data-[focus-within]:outline-none data-[focus-within]:ring-primary/15 data-[focus-within]:ring-3 data-[focus-within]:ring-offset-0 aria-invalid:border-destructive;
   }
 
   .button-3d {
