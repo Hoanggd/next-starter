@@ -4,6 +4,7 @@ import { DashboardTableOfContents } from "@/components/Toc";
 import { getTableOfContents } from "@/lib/toc";
 import { Link } from "@workspace/ui/components/link";
 import { ScrollArea } from "@workspace/ui/components/scroll-area";
+import { cn } from "@workspace/ui/lib/utils";
 import { allDocs } from "contentlayer/generated";
 import { ArrowUpRight } from "lucide-react";
 import { Metadata } from "next";
@@ -58,12 +59,24 @@ export default async function DocPage({ params }: DocPageProps) {
 
   return (
     <>
-      <article className="prose dark:prose-invert prose-neutral prose-headings:font-semibold prose-headings:tracking-tight prose: prose-h2:mt-10 mb-6 max-w-full min-w-0 w-full py-10">
+      <article
+        className={cn(
+          "prose dark:prose-invert prose-neutral prose:prose-h2:mt-10 mb-6 max-w-full min-w-0 w-full py-10",
+          "prose-headings:font-medium prose-h1:tracking-tight prose-h1:font-semibold prose-headings:scroll-mt-20"
+        )}
+      >
         <div className="mb-10 px-10 border-b pb-10">
           <h1 className="mb-0 font-mono text-[40px]">{doc.title}</h1>
-          <p className="text-muted-foreground not-prose mt-2 mb-2">{doc.description}</p>
+          <p className="text-muted-foreground not-prose mt-2 mb-2">
+            {doc.description}
+          </p>
           {doc.originalDocs && (
-            <Link href={doc.originalDocs} target="_blank" variant="outline" size="sm">
+            <Link
+              href={doc.originalDocs}
+              target="_blank"
+              variant="outline"
+              size="sm"
+            >
               Docs <ArrowUpRight />
             </Link>
           )}

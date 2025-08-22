@@ -1,9 +1,7 @@
 import "@workspace/ui/globals.css";
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
-import { Inter, Geist_Mono } from "next/font/google";
-import { Toaster as SonnerToaster } from "sonner";
-import { Toaster } from "@workspace/ui/components/sonner";
+import { Geist_Mono, Inter } from "next/font/google";
+import { Providers } from "./providers";
 
 const fontSans = Inter({ subsets: ["latin"] });
 const fontMono = Geist_Mono({
@@ -29,16 +27,7 @@ export default function RootLayout({
       className={`${fontSans.className} ${fontMono.variable}`}
     >
       <body className={`antialiased text-foreground`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          disableTransitionOnChange
-          enableColorScheme
-        >
-          {children}
-          <SonnerToaster />
-          <Toaster />
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
