@@ -15,6 +15,7 @@ import {
   SwatchBook,
 } from "lucide-react";
 import { Logo } from "../../components/Logo";
+import { GITHUB_URL } from "@/constants/common";
 
 export default function Home() {
   return (
@@ -40,7 +41,7 @@ export default function Home() {
               <Link
                 variant="outline"
                 size="xl"
-                href="https://github.com"
+                href={GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >

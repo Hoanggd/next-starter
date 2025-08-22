@@ -1,6 +1,7 @@
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Logo } from "@/components/Logo";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { GITHUB_URL } from "@/constants/common";
 import { Link } from "@workspace/ui/components/link";
 
 export function LandingPageLayout({ children }: { children: React.ReactNode }) {
@@ -10,7 +11,7 @@ export function LandingPageLayout({ children }: { children: React.ReactNode }) {
         <div className="h-16 container max-w-screen-xl mx-auto flex items-center">
           <Logo />
           <Link
-            href="https://github.com/Hoanggd/next-starter"
+            href={GITHUB_URL}
             target="_blank"
             className="ml-auto"
             variant="ghost"
