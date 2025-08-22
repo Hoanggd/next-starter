@@ -1,4 +1,4 @@
-import { DocsLayout } from "@/layouts/Docs";
+import { DocsLayout } from "@/layouts/Docs/DocsLayout";
 import "@workspace/ui/globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
@@ -29,7 +29,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${fontSans.className} ${fontMono.variable}`}
     >
-      <body className={`antialiased text-foreground bg-neutral-50`}>
+      <body className={`antialiased text-foreground`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

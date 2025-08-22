@@ -8,7 +8,7 @@ import React from 'react'
 export function DocsLayout({ children, tocs }: { children: React.ReactNode; tocs: React.ReactNode }) {
   return (
     <>
-      <div className="container max-w-screen-xl mx-auto bg-neutral-50">
+      <div className="container max-w-screen-xl mx-auto">
         {/* header  */}
         <div className="fixed h-16 max-w-screen-xl w-full z-20">
           <CrossIcon className="absolute top-16 left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
@@ -24,7 +24,7 @@ export function DocsLayout({ children, tocs }: { children: React.ReactNode; tocs
           </div>
         </div>
         {/* header background */}
-        <div className="fixed h-16 left-0 w-full border-b bg-neutral-50 z-[19]"></div>
+        <div className="fixed h-16 left-0 w-full border-b z-[19] bg-background"></div>
 
         {/* content layout */}
         <div className="min-h-screen grid grid-cols-[260px_1fr_260px] max-w-[1280px] w-full">
@@ -36,10 +36,10 @@ export function DocsLayout({ children, tocs }: { children: React.ReactNode; tocs
           </div>
 
           {/* main content */}
-          <div className="h-full pt-16 border-x grid grid-cols-[40px_1fr_40px] bg-neutral-100/50">
-            <div className="bg-[image:repeating-linear-gradient(315deg,_#E5E5E5_0,_#E5E5E5_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+          <div className="h-full pt-16 border-x grid grid-cols-[40px_1fr_40px] bg-background-secondary">
+            <div className="bg-[image:repeating-linear-gradient(315deg,var(--background-tertiary)_0,var(--background-tertiary)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
             <div className="border-x">{children}</div>
-            <div className="bg-[image:repeating-linear-gradient(315deg,_#E5E5E5_0,_#E5E5E5_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+            <div className="bg-[image:repeating-linear-gradient(315deg,var(--background-tertiary)_0,var(--background-tertiary)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
           </div>
           <div className="h-full py-16">
             <div className="w-[260px] h-full fixed border-r">{tocs}</div>

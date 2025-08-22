@@ -26,13 +26,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-linear-to-b from-primary/90 to-primary text-primary-foreground button-3d",
+          "bg-linear-to-b from-primary/90 to-primary text-white button-3d",
         destructive:
           "bg-linear-to-b from-destructive/90 to-destructive text-white button-3d",
         outline:
-          "bg-linear-to-b from-white to-neutral-50 shadow-sm border border-input",
+          "bg-linear-to-b from-background to-background-secondary shadow-sm border border-input text-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground data-[hovered]:bg-secondary/80",
+          "bg-secondary data-[hovered]:bg-secondary/80",
         ghost: "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground data-[pressed]:bg-accent/50",
         link: "text-primary underline-offset-4 data-[hovered]:underline px-0! py-0! h-auto! underline",
         unstyled: "",

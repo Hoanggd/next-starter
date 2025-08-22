@@ -66,7 +66,7 @@ export function CopyToClipboard({
   return (
     <Button
       className={cn(
-        "text-neutral-500 bg-[#2d333b]/5 backdrop-blur-sm hover:bg-[#343b44]/10",
+        "text-neutral-500 backdrop-blur-sm hover:bg-[#343b44]/10",
         className
       )}
       variant={"unstyled"}
