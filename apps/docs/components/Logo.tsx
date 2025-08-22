@@ -6,11 +6,12 @@ export function Logo({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn(
-        'block group py-2 px-2 hover:bg-gray-100 rounded-lg transition-colors cursor-default active:bg-white',
+        'flex items-center gap-2',
         className,
       )}
     >
-      <img src="/logo.svg" alt="Logo" />
+      <img src="/logo.png" alt="Logo" className="w-7 h-7" />
+      <span className="font-semibold">Sophon</span>
     </Link>
   )
 }

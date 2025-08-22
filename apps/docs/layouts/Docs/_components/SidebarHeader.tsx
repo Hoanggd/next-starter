@@ -6,8 +6,8 @@ import { Link } from '@workspace/ui/components/link'
 
 export function SidebarHeader() {
   return (
-    <div className="h-full flex items-center px-4">
-      <Logo className="-ml-2" />
+    <div className="h-full flex items-center px-6">
+      <Logo />
       <Link href="https://github.com/Hoanggd/next-starter" target="_blank" className="ml-auto">
         <GithubIcon />
       </Link>

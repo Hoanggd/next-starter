@@ -59,9 +59,9 @@ export default async function DocPage({ params }: DocPageProps) {
   return (
     <>
       <article className="prose prose-neutral prose-headings:font-semibold prose-headings:tracking-tight prose-h2:mt-10 mb-6 max-w-full min-w-0 w-full py-10 prose-p:text-gray-800">
-        <div className="mb-10 px-10 border-b pb-4">
-          <h1 className="mb-0">{doc.title}</h1>
-          <p className="text-neutral-500 not-prose mt-2 mb-1">{doc.description}</p>
+        <div className="mb-10 px-10 border-b pb-10">
+          <h1 className="mb-0 font-mono text-[40px]">{doc.title}</h1>
+          <p className="text-neutral-500 not-prose mt-2 mb-2">{doc.description}</p>
           {doc.originalDocs && (
             <Link href={doc.originalDocs} target="_blank" variant="outline" size="sm">
               Docs <ArrowUpRight />
