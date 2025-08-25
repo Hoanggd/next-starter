@@ -1,8 +1,7 @@
 "use client";
 
-import { DarkModeIcon } from "@/components/icons/DarkMode";
-import { LightModeIcon } from "@/components/icons/LightMode";
 import { Button } from "@workspace/ui/components/button";
+import { MoonStar, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 
 enum Theme {
@@ -19,7 +18,7 @@ export function ThemeSwitcher() {
       size="icon"
       onClick={() => setTheme(theme === Theme.DARK ? Theme.LIGHT : Theme.DARK)}
     >
-      {theme === Theme.DARK ? <LightModeIcon /> : <DarkModeIcon />}
+      {theme === Theme.DARK ? <SunIcon /> : <MoonStar />}
     </Button>
   );
 }

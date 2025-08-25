@@ -33,6 +33,10 @@ function getMenuGroups(module: string): MenuGroup[] {
             title: "Installation",
             href: "/docs/ui/installation",
           },
+          {
+            title: "Philosophy",
+            href: "/docs/ui/philosophy",
+          },
         ],
       },
       {

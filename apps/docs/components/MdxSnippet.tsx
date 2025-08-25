@@ -3,12 +3,11 @@ import { highlightCode } from "@/lib/highlight-code";
 import { ScrollArea } from "@workspace/ui/components/scroll-area";
 import { cn } from "@workspace/ui/lib/utils";
 import { SquareTerminal } from "lucide-react";
-import { codeToHtml } from "shiki";
 
 export type MdxSnippetProps = {
   children: any;
   className?: string;
-  lang?: Partial<Parameters<typeof codeToHtml>[1]>["lang"];
+  lang?: string;
 };
 
 export async function MdxSnippet({
@@ -38,7 +37,7 @@ export async function MdxSnippet({
           )}
         >
           <SquareTerminal size={16} />
-          Bash
+          {lang}
         </div>
 
         <div className="relative border rounded-md overflow-hidden ">
@@ -50,7 +49,7 @@ export async function MdxSnippet({
             <ScrollArea className="grid">
               <div
                 dangerouslySetInnerHTML={{ __html: out }}
-                className="max-h-[340px] [&>pre]:my-0 [&>pre]:rounded-none"
+                className="max-h-[800px] [&>pre]:my-0 [&>pre]:rounded-none"
               ></div>
             </ScrollArea>
           </div>

@@ -14,7 +14,21 @@ const components = {
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2 className={cn(className)} {...props} />
   ),
-  MdxSnippet,
+  pre: ({ children, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
+    let lang = "";
+
+    try {
+      lang = (children as any).props.className?.split("language-")[1];
+    } catch (error) {
+      lang = "bash";
+    }
+
+    return (
+      <MdxSnippet lang={lang} {...props}>
+        {children}
+      </MdxSnippet>
+    );
+  },
 };
 
 export function Mdx({ code }: MdxProps) {
