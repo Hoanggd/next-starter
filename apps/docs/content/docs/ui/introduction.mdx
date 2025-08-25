@@ -1,52 +1,81 @@
 ---
 title: "Introduction"
-description: "A modern, accessible component library built with React Aria and Tailwind CSS"
+description: "A modern Next.js boilerplate with opinionated project structure and best-in-class tools"
 ---
 
-## Why I Built This Library
+## What is This Project?
 
-While shadcn/ui provides excellent components, I recognized that some components relying on Radix UI had accessibility limitations. I decided to create a comprehensive solution that addresses these concerns by leveraging **React Aria** - a library specifically designed for building accessible UI components.
+This is a **Next.js boilerplate** that provides an opinionated, production-ready foundation for building modern web applications. It's designed to give you everything you need to start building immediately, with carefully chosen tools and patterns that work together seamlessly.
+
+## Why This Boilerplate?
+
+Instead of starting from scratch and spending time configuring tools, this boilerplate gives you:
+
+- **Opinionated project structure** that scales with your team
+- **Monorepo setup** for managing multiple apps and packages
+- **Best-in-class tools** that are proven in production
+- **Accessibility-first approach** with React Aria components
+- **Default good-looking components** that you can customize or replace
+- **Modern development patterns** that make your code maintainable
 
 ## Key Features
 
-### 🎯 Accessibility First
-- Built on **React Aria** - the gold standard for accessible React components
-- Full ARIA compliance and keyboard navigation support
-- Screen reader optimized with proper semantic markup
-- WCAG 2.1 AA compliance out of the box
+### 🏗️ Project Architecture
+- **Monorepo structure** using pnpm workspaces and Turborepo
+- **Opinionated folder organization** that scales from small to large projects
+- **TypeScript-first** with strict configuration and shared types
+- **ESLint and Prettier** setup for consistent code quality
 
-### 🚀 Modern React Patterns
-- Built for React 19+ with the latest hooks and patterns
-- TypeScript-first with comprehensive type definitions
-- Optimized for Next.js 15+ and modern bundlers
-- Zero runtime overhead with tree-shaking support
+### 🎯 Accessibility-First Components
+- **React Aria-based components** instead of Radix UI for better accessibility
+- **Enhanced calendar and date picker** with superior UX
+- **Better pagination** with comprehensive features
+- **Tailwind CSS** for consistent, maintainable styling
+- **Dark mode support** with next-themes
 
-### 🎨 Flexible Styling
-- **Tailwind CSS** integration with custom design tokens
-- CSS-in-JS with **class-variance-authority** for variant management
-- Responsive design patterns built-in
-- Dark mode support with **next-themes**
+### 🔄 State Management & Data Fetching
+- **TanStack Query** for powerful async state management
+- **Optimistic updates** and background refetching
+- **Built-in caching** and synchronization
+- **Error boundaries** and retry mechanisms
 
-### 🔧 Developer Experience
-- Consistent API across all components
-- Comprehensive documentation with examples
-- Built-in form handling with **React Hook Form** and **Zod**
-- Extensive customization options
+### 📝 Form Management
+- **React Hook Form** for performant form handling
+- **Zod validation** with TypeScript integration
+- **Field arrays** and conditional field logic
+- **Form submission** with proper error handling
 
-## Browser Support
+### 📚 Comprehensive Examples
+- **Form management patterns** with validation strategies
+- **Data fetching strategies** and error handling
+- **Loading states** and user feedback
+- **Real-world use cases** that you can adapt to your needs
 
-- **Modern browsers** (Chrome 90+, Firefox 88+, Safari 14+)
-- **React 18+** with concurrent features
-- **Node.js 18+** for build tools
+## Technology Stack
 
-## Contributing
+- **Framework**: Next.js 15+ with App Router
+- **Language**: TypeScript with strict configuration
+- **Styling**: Tailwind CSS with custom design system
+- **Components**: React Aria-based UI components
+- **Forms**: React Hook Form + Zod validation
+- **Data**: TanStack Query for server state
+- **Build**: Turborepo for monorepo management
+- **Package Manager**: pnpm for fast, efficient dependency management
 
-I welcome contributions! My component library is built with the community in mind. See my contributing guidelines for more information on how to get involved.
+## Getting Started
+
+This boilerplate is designed to get you up and running quickly. The examples demonstrate:
+
+- How to structure forms with validation
+- Best practices for data fetching and error handling
+- Component composition patterns
+- Accessibility considerations
+- Performance optimization techniques
 
 ## What's Next?
 
-Ready to dive in? Check out my component examples and start building accessible, beautiful interfaces today. Each component comes with comprehensive documentation, usage examples, and accessibility guidelines.
+Ready to dive in? Explore the examples to see how these tools work together, or jump straight into building your application. Each example is designed to be production-ready and follows modern React patterns.
 
 ---
 
-*Built with ❤️ using React Aria, Tailwind CSS, and modern web standards.*
+*Built with ❤️ using Next.js, React Aria, TanStack Query, and modern web standards.*

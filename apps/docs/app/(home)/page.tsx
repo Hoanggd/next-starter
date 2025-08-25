@@ -1,4 +1,5 @@
 import { HeroBackground } from "@/components/HeroBackground";
+import { GITHUB_URL } from "@/constants/common";
 import {
   Card,
   CardDescription,
@@ -7,15 +8,14 @@ import {
 } from "@workspace/ui/components/card";
 import { Link } from "@workspace/ui/components/link";
 import {
-  Code,
-  Keyboard,
+  Database,
+  FormInput,
   PackageIcon,
-  Rocket,
   ShieldCheck,
   SwatchBook,
+  Zap
 } from "lucide-react";
 import { Logo } from "../../components/Logo";
-import { GITHUB_URL } from "@/constants/common";
 
 export default function Home() {
   return (
@@ -26,13 +26,13 @@ export default function Home() {
         <div className="relative px-4 py-40 mx-auto max-w-7xl">
           <div className="text-center">
             <h1 className="text-6xl font-bold tracking-tight mb-6 text-muted-foreground">
-              Build Beautiful UIs
+              Build Production Apps
               <div className="text-foreground">Faster Than Ever</div>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Sophon is a modern, accessible, and fully customizable UI library
-              for React. Built with React Aria Components and Tailwind CSS for
-              exceptional user experiences.
+              A modern Next.js boilerplate with opinionated project structure, 
+              React Aria components, TanStack Query, and everything you need to 
+              start building immediately.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link variant="default" size="xl" href="/docs/ui/introduction">
@@ -60,46 +60,45 @@ export default function Home() {
               Everything You Need
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive set of accessible components designed for modern web
-              applications
+              Production-ready boilerplate with best-in-class tools and patterns
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <FeatureCard
-              icon={<Keyboard strokeWidth={1.5} />}
-              title="Accessible Components"
-              description="Built with React Aria Components for exceptional accessibility and keyboard navigation"
+              icon={<PackageIcon strokeWidth={1.5} />}
+              title="Monorepo Structure"
+              description="Scalable monorepo setup with pnpm workspaces and Turborepo for managing multiple apps"
             />
 
             <FeatureCard
-              title="Customizable Design"
-              description="Fully customizable with CSS variables and Tailwind CSS for consistent theming"
+              title="React Aria Components"
+              description="Accessibility-first components built with React Aria instead of Radix UI for better UX"
               icon={<SwatchBook strokeWidth={1.5} />}
             />
 
             <FeatureCard
-              title="Performance First"
-              description="Optimized for performance with tree-shaking and minimal bundle size"
-              icon={<Rocket strokeWidth={1.5} />}
+              title="TanStack Query"
+              description="Powerful async state management with caching, background updates, and error handling"
+              icon={<Database strokeWidth={1.5} />}
             />
 
             <FeatureCard
-              title="TypeScript Ready"
-              description="Full TypeScript support with excellent IntelliSense and type safety"
-              icon={<Code strokeWidth={1.5} />}
+              title="Form Management"
+              description="React Hook Form + Zod validation for performant forms with TypeScript integration"
+              icon={<FormInput strokeWidth={1.5} />}
             />
 
             <FeatureCard
               title="Production Ready"
-              description="Battle-tested components used in production applications"
+              description="Opinionated patterns and examples that scale from small to large applications"
               icon={<ShieldCheck strokeWidth={1.5} />}
             />
 
             <FeatureCard
-              icon={<PackageIcon strokeWidth={1.5} />}
-              title="Open Source"
-              description="Free and open source with an active community and regular updates"
+              icon={<Zap strokeWidth={1.5} />}
+              title="Fast Development"
+              description="Get started immediately with pre-configured tools and comprehensive examples"
             />
           </div>
         </div>
@@ -112,7 +111,7 @@ export default function Home() {
             <Logo />
           </div>
           <p className="text-muted-foreground mb-4">
-            Built with ❤️ using React Aria, Tailwind CSS, and modern web
+            Built with ❤️ using Next.js, React Aria, TanStack Query, and modern web
             standards.
           </p>
         </div>

@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Boilerplate
 
-## Getting Started
+A modern, production-ready Next.js boilerplate with opinionated project structure and best-in-class tools for building scalable web applications.
 
-First, run the development server:
+## 🚀 What's Included
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This boilerplate gives you everything you need to start building immediately:
+
+- **🏗️ Opinionated Project Structure** - Scalable monorepo setup with pnpm workspaces and Turborepo
+- **🎯 Accessibility-First Components** - React Aria-based components instead of Radix UI for better UX
+- **🔄 State Management** - TanStack Query for powerful async state management
+- **📝 Form Handling** - React Hook Form + Zod validation with TypeScript integration
+- **🎨 Styling** - Tailwind CSS with custom design system and dark mode support
+- **📚 Comprehensive Examples** - Form patterns, data fetching strategies, error handling, and loading states
+
+## 🛠️ Technology Stack
+
+- **Framework**: Next.js 15+ with App Router
+- **Language**: TypeScript with strict configuration
+- **Styling**: Tailwind CSS with custom design system
+- **Components**: React Aria-based UI components
+- **Forms**: React Hook Form + Zod validation
+- **Data**: TanStack Query for server state
+- **Build**: Turborepo for monorepo management
+- **Package Manager**: pnpm for fast, efficient dependency management
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- pnpm (recommended) or npm/yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd next-starter
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   pnpm dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the result.
+
+## 📁 Project Structure
+
+```
+next-starter/
+├── apps/
+│   ├── docs/          # Documentation site
+│   └── web/           # Main web application
+├── packages/
+│   ├── ui/            # Shared UI components
+│   ├── eslint-config/ # Shared ESLint configuration
+│   └── typescript-config/ # Shared TypeScript configuration
+├── turbo.json          # Turborepo configuration
+└── pnpm-workspace.yaml # pnpm workspace configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm lint` - Run ESLint
+- `pnpm type-check` - Run TypeScript type checking
+- `pnpm clean` - Clean build artifacts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📖 Documentation
 
-## Learn More
+- **Introduction**: [Getting Started Guide](/docs/ui/introduction)
+- **Components**: [UI Component Library](/docs/ui)
+- **Examples**: [Form Management](/docs/form-examples), [Data Fetching](/docs)
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Monorepo Architecture
+- Manage multiple apps and packages in a single repository
+- Shared dependencies and configurations
+- Fast builds with Turborepo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Accessibility First
+- React Aria components for superior accessibility
+- Enhanced calendar, date picker, and pagination
+- WCAG 2.1 AA compliance out of the box
 
-## Deploy on Vercel
+### Modern Development Patterns
+- TypeScript-first with comprehensive type definitions
+- Optimized for Next.js 15+ and modern bundlers
+- Zero runtime overhead with tree-shaking support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Production Ready
+- Battle-tested patterns and examples
+- Comprehensive error handling and loading states
+- Performance optimization techniques
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+We welcome contributions! This boilerplate is built with the community in mind. Please see our contributing guidelines for more information.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+Built with ❤️ using Next.js, React Aria, TanStack Query, and modern web standards.
+
+---
+
+**Ready to build something amazing?** Start with this boilerplate and focus on what matters most - your application logic, not tool configuration.
