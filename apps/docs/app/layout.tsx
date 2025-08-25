@@ -2,7 +2,7 @@ import "@workspace/ui/globals.css";
 import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
 import { Providers } from "./providers";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/constants/common";
+import { PROJECT_DESCRIPTION, PROJECT_NAME } from "@/constants/common";
 
 const fontSans = Inter({ subsets: ["latin"] });
 const fontMono = Geist_Mono({
@@ -12,10 +12,10 @@ const fontMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: SITE_NAME,
-    template: `%s | ${SITE_NAME}`,
+    default: PROJECT_NAME,
+    template: `%s | ${PROJECT_NAME}`,
   },
-  description: SITE_DESCRIPTION,
+  description: PROJECT_DESCRIPTION,
 };
 
 export default function RootLayout({
