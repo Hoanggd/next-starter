@@ -5,6 +5,7 @@ import {
 } from "@/layouts/Docs/_components/ModulePicker";
 import { ScrollArea } from "@workspace/ui/components/scroll-area";
 import { cn } from "@workspace/ui/lib/utils";
+import { BoltIcon, BookOpen, BrainIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -12,6 +13,7 @@ import React from "react";
 type MenuItem = {
   title: string;
   href: string;
+  icon?: React.ReactElement;
 };
 
 type MenuGroup = {
@@ -28,14 +30,17 @@ function getMenuGroups(module: string): MenuGroup[] {
           {
             title: "Introduction",
             href: "/docs/ui/introduction",
+            icon: <BookOpen size={16} strokeWidth={1.5} />,
           },
           {
             title: "Installation",
             href: "/docs/ui/installation",
+            icon: <BoltIcon size={16} strokeWidth={1.5} />,
           },
           {
             title: "Philosophy",
             href: "/docs/ui/philosophy",
+            icon: <BrainIcon size={16} strokeWidth={1.5} />,
           },
         ],
       },
@@ -113,20 +118,21 @@ export function SidebarMenu() {
   );
 }
 
-function MenuItem({ title, href }: MenuItem) {
+function MenuItem({ title, href, icon }: MenuItem) {
   const pathname = usePathname();
   const isActive = pathname === href;
 
   return (
     <Link
       className={cn(
-        "flex items-center text-sm px-[23px] h-8 transition-colors text-muted-foreground border-l border-transparent focus-visible:outline-none focus-visible:bg-background-secondary",
+        "flex items-center gap-2 text-sm px-[23px] h-8 transition-colors text-muted-foreground border-l border-transparent focus-visible:outline-none focus-visible:bg-background-secondary",
         isActive
           ? "text-foreground border-foreground"
           : "hover:text-foreground hover:border-foreground/20"
       )}
       href={href}
     >
+      {icon}
       {title}
     </Link>
   );

@@ -2,7 +2,7 @@ import { CrossIcon } from '@/layouts/Docs/_components/Icons'
 import { ModulePicker } from '@/layouts/Docs/_components/ModulePicker'
 import { SidebarHeader } from '@/layouts/Docs/_components/SidebarHeader'
 import { SidebarMenu } from '@/layouts/Docs/_components/SidebarMenu'
-import { SidebarSearch } from '@/layouts/Docs/_components/SidebarSearch'
+import { DocsSearch } from '@/layouts/_shared/DocsSearch'
 import React from 'react'
 
 export function DocsLayout({ children, tocs }: { children: React.ReactNode; tocs: React.ReactNode }) {
@@ -18,7 +18,7 @@ export function DocsLayout({ children, tocs }: { children: React.ReactNode; tocs
               <SidebarHeader />
             </div>
             <div className="flex items-center px-4 border-x">
-              <SidebarSearch />
+              <DocsSearch />
             </div>
             <div className="border-r h-full"></div>
           </div>

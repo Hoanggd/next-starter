@@ -2,7 +2,7 @@ import { CopyToClipboard } from "@/components/CopyToClipboard";
 import { highlightCode } from "@/lib/highlight-code";
 import { ScrollArea } from "@workspace/ui/components/scroll-area";
 import { cn } from "@workspace/ui/lib/utils";
-import { SquareTerminal } from "lucide-react";
+import { CodeIcon, SquareDashedBottomCode, SquareTerminal } from "lucide-react";
 
 export type MdxSnippetProps = {
   children: any;
@@ -32,12 +32,16 @@ export async function MdxSnippet({
       <div className="p-2 space-y-1.5 border rounded-xl bg-background">
         <div
           className={cn(
-            "py-0.5 flex items-center gap-2 not-prose text-sm",
+            "pl-1 flex items-center gap-1 not-prose text-sm",
             className
           )}
         >
-          <SquareTerminal size={16} />
-          {lang}
+          {lang === "bash" ? (
+            <SquareTerminal size={16} strokeWidth={1.5} />
+          ) : (
+            <CodeIcon size={16} strokeWidth={1.5} />
+          )}
+          <div className="pb-px">{lang}</div>
         </div>
 
         <div className="relative border rounded-md overflow-hidden ">

@@ -87,7 +87,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
             <a
               href={item.url}
               className={cn(
-                'flex text-sm items-center min-h-8 py-1 text-muted-foreground border-l border-transparent',
+                'flex text-[13px] items-center min-h-7 py-0.5 text-muted-foreground border-l border-transparent',
                 item.url === `#${activeItem}`
                   ? 'text-foreground border-foreground'
                   : 'hover:text-foreground hover:border-foreground/20',
