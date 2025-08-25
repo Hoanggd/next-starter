@@ -35,8 +35,8 @@ This boilerplate gives you everything you need to start building immediately:
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
-   cd next-starter
+   git clone https://github.com/Hoanggd/base-stack
+   cd base-stack
    ```
 
 2. **Install dependencies**
@@ -55,7 +55,7 @@ This boilerplate gives you everything you need to start building immediately:
 ## 📁 Project Structure
 
 ```
-next-starter/
+base-stack/
 ├── apps/
 │   ├── docs/          # Documentation site
 │   └── web/           # Main web application
@@ -72,7 +72,6 @@ next-starter/
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
 - `pnpm lint` - Run ESLint
-- `pnpm type-check` - Run TypeScript type checking
 - `pnpm clean` - Clean build artifacts
 
 ## 📖 Documentation

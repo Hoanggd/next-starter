@@ -8,7 +8,7 @@ import { GITHUB_URL } from "@/constants/common";
 export function SidebarHeader() {
   return (
     <div className="h-full flex items-center px-6">
-      <Logo />
+      <Logo showName={false} />
       <Link
         href={GITHUB_URL}
         target="_blank"

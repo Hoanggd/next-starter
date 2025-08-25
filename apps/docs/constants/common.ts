@@ -1,5 +1,5 @@
-export const PROJECT_NAME = "Next Starter";
-export const PROJECT_NAME_SLUG = "next-starter";
+export const PROJECT_NAME = "Base Stack";
+export const PROJECT_NAME_SLUG = "base-stack";
 export const PROJECT_DESCRIPTION =
-  "Next Starter is a modern, accessible, and fully customizable UI library for React.";
+  "Base Stack is a modern, accessible, and fully customizable stack for building web applications.";
 export const GITHUB_URL = `https://github.com/Hoanggd/${PROJECT_NAME_SLUG}`;
