@@ -13,7 +13,7 @@ export type MdxSnippetProps = {
 export async function MdxSnippet({
   children,
   className,
-  lang = 'bash',
+  lang = "bash",
 }: MdxSnippetProps) {
   let code = "";
 
@@ -50,7 +50,7 @@ export async function MdxSnippet({
               <div
                 dangerouslySetInnerHTML={{ __html: out }}
                 className="max-h-[800px] [&>pre]:my-0 [&>pre]:rounded-none"
-              ></div>
+              />
             </ScrollArea>
           </div>
         </div>

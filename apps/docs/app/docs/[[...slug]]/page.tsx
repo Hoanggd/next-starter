@@ -63,7 +63,7 @@ export default async function DocPage({ params }: DocPageProps) {
         className={cn(
           "prose dark:prose-invert prose-neutral prose:prose-h2:mt-10 mb-6 max-w-full min-w-0 w-full py-10",
           "prose-headings:font-semibold prose-h1:tracking-tight prose-h1:font-bold prose-headings:scroll-mt-20",
-          "prose-blockquote:border-none prose-blockquote:font-normal",
+          "prose-blockquote:font-normal prose-blockquote:mx-10 prose-blockquote:px-4!",
           "prose-ul:list-inside prose-ol:list-inside",
         )}
       >

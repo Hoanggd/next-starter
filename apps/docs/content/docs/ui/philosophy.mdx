@@ -3,20 +3,17 @@ title: Philosophy
 description: Our guiding principles for building maintainable, performant, and beautiful user interfaces
 ---
 
-# Philosophy
-
-Our approach to building user interfaces is guided by a simple principle: **simplicity over complexity**. We believe that the best code is the code that's easiest to understand, maintain, and modify. This philosophy influences every decision we make, from component architecture to state management.
+> Our approach to building user interfaces is guided by a simple principle: **simplicity over complexity**. We believe that the best code is the code that's easiest to understand, maintain, and modify. This philosophy influences every decision we make, from component architecture to state management.
 
 ## Write Simple, Stupid Code
 
-> "The best code is no code at all. The second best code is simple, stupid code." - [Cognitive Load Theory](https://github.com/zakirullin/cognitive-load)
+> "The best code isn't the most elegant or sophisticated - it's the code that future developers (including yourself) can understand quickly." - [Cognitive Load Theory](https://github.com/zakirullin/cognitive-load)
 
 We prioritize **cognitive load reduction** above all else. Every line of code should be immediately understandable to any developer on the team. This means:
 
 - **Avoid clever solutions** - If you need to explain your code to someone, it's probably too complex
 - **Favor explicit over implicit** - Magic is great in fantasy novels, terrible in codebases
 - **Prefer obvious over elegant** - Code that reads like plain English is better than code that's "clever"
-- **Keep functions small** - A function should do one thing well, not many things poorly
 
 ### Example: Simple vs. Complex
 
@@ -34,12 +31,12 @@ const processedItems = activeItems.map(item => ({
   processed: true
 }));
 const itemsById = {};
-processedItems.forEach(item => {
-  itemsById[item.id] = item;
-});
+for (const item of processedItems) {
+   itemsById[item.id] = item;
+}
 ```
 
-## Embrace Duplication Over Wrong Abstractions
+## Avoid Hasty Abstractions
 
 > "Prefer duplication over the wrong abstraction" - [Sandi Metz](https://kentcdodds.com/blog/aha-programming)
 
@@ -81,8 +78,7 @@ useEffect(() => {
   fetchUserData();
 }, []);
 
-// ✅ Server components or data fetching libraries
-// ✅ Event handlers for user actions
+// ✅ Server components or data fetching libraries (Tanstack Query)
 ```
 
 ### When useEffect is Acceptable
@@ -99,35 +95,31 @@ Global state management libraries (Zustand, Redux, Context) create invisible dep
 
 ```tsx
 // ❌ Global state
-const { user } = useUserStore();
-const { setTheme } = useThemeStore();
+const { searchQuery } = useSearchStore();
+const { currentPage } = usePaginationStore();
 
-// ✅ URL state
-const searchParams = useSearchParams();
-const user = searchParams.get('user');
-const theme = searchParams.get('theme') || 'light';
+// ✅ URL state with nuqs
+import { useQueryState, parseAsInteger } from 'nuqs';
 
-// Update state by updating URL
-const updateTheme = (newTheme) => {
-  const params = new URLSearchParams(searchParams);
-  params.set('theme', newTheme);
-  router.push(`?${params.toString()}`);
-};
+const [searchQuery, setSearchQuery] = useQueryState('q', { defaultValue: '' });
+const [page, setPage] = useQueryState('page', parseAsInteger.withDefault(1));
 ```
 
 ### Benefits of URL State
 
 - **Shareable** - Users can bookmark and share specific states
-- **Debuggable** - You can see the app state in the browser
+- **Debuggable** - You can see the app app state in the browser
 - **Testable** - Easy to test different states by changing URLs
 - **Predictable** - State changes are visible and trackable
 - **SEO friendly** - Search engines can understand your app state
+- **Type-safe** - With [nuqs](https://nuqs.47ng.com/), you get end-to-end type safety
+- **Simple API** - React.useState-like syntax that syncs with the URL automatically
 
 ### When Global State is Acceptable
 
-- **User authentication** (but consider HTTP-only cookies)
-- **Real-time data** that doesn't affect navigation
 - **UI-only state** that shouldn't be in the URL (modals, dropdowns)
+- **Theme preferences** (light/dark mode, color schemes)
+- **Layout configuration** (sidebar collapsed state, panel sizes, view preferences)
 
 ## Write Pixel-Perfect UI
 
@@ -164,7 +156,7 @@ Our philosophy can be distilled into these core principles:
 1. **Simplicity first** - Reduce cognitive load at every opportunity
 2. **Embrace duplication** - Wait for patterns to emerge naturally
 3. **Minimize side effects** - Prefer declarative over imperative
-4. **URL as state** - Make app state visible and shareable
+4. **URL as state** - Make app state visible and shareable with [nuqs](https://nuqs.47ng.com/)
 5. **Pixel perfection** - Attention to detail builds trust
 
 Remember: **The best code is the code that's easiest to change.** When in doubt, choose the simpler option. You can always make it more sophisticated later, but it's much harder to simplify complex code.
