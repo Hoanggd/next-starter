@@ -46,7 +46,7 @@ export function GridListItem({
       textValue={textValue}
       className={composeRenderProps(className, (className) =>
         cn(
-          "jolly-GridListItem relative flex w-full cursor-default select-none items-center gap-3 rounded-sm px-2 py-1.5 text-sm outline-none",
+          "jolly-GridListItem relative flex w-full select-none items-center gap-3 rounded-sm px-2 py-1.5 text-sm outline-none",
           /* Disabled */
           "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
           /* Focus Visible */

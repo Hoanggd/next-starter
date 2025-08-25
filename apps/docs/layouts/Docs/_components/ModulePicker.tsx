@@ -55,7 +55,7 @@ export function ModulePicker() {
   return (
     <div className="p-2 py-2 z-[2] relative">
       <PopoverTrigger>
-        <Button variant='unstyled' className="text-start w-full rounded-lg transition-colors flex items-center gap-3 p-1.5 cursor-default hover:bg-neutral-100 data-[state=open]:bg-neutral-100">
+        <Button variant='unstyled' className="text-start w-full rounded-lg transition-colors flex items-center gap-3 p-1.5 hover:bg-neutral-100 data-[state=open]:bg-neutral-100">
           <ModuleItem module={selectedModule} />
           <ChevronDown className="ml-auto w-4 h-4 text-neutral-500" />
         </Button>
@@ -65,7 +65,7 @@ export function ModulePicker() {
               {modules.map((item) => (
                 <Link
                   href={`/${item.value}`}
-                  className="text-start w-full rounded-md flex items-center gap-3 p-1.5 cursor-default hover:bg-neutral-400/10"
+                  className="text-start w-full rounded-md flex items-center gap-3 p-1.5 hover:bg-neutral-400/10"
                 >
                   <ModuleItem module={item} />
                 </Link>

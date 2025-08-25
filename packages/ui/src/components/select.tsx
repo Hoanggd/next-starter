@@ -81,7 +81,7 @@ function SelectItem(props: ListBoxItemProps & { children: string }) {
     <ListBoxItem
       {...props}
       textValue={props.children}
-      className="group flex items-center gap-2 cursor-default select-none py-2 px-4 outline-hidden rounded-sm text-neutral-900 data-focused:bg-sky-600 data-focused:text-white"
+      className="group flex items-center gap-2 select-none py-2 px-4 outline-hidden rounded-sm text-neutral-900 data-focused:bg-sky-600 data-focused:text-white"
     >
       {({ isSelected }) => (
         <>

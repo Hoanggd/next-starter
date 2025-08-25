@@ -11,7 +11,7 @@ import { cn } from "@workspace/ui/lib/utils"
 
 const buttonVariants = cva(
   [
-    "inline-flex items-center gap-1 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all no-underline",
+    "cursor-pointer inline-flex items-center gap-1 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all no-underline",
     "data-[hovered]:opacity-90 data-[pressed]:opacity-100",
     /* SVGs */
     '[&_svg]:pointer-events-none [&_svg]:size-[14px] [&_svg]:shrink-0 [&_svg]:stroke-[2.5]',
