@@ -67,12 +67,13 @@ Following the **AHA Programming** principle (Avoid Hasty Abstractions), we belie
 
 ## Limit useEffect Usage
 
-> "Effects are an escape hatch from React's paradigm." - [React Documentation](https://react.dev/learn/you-might-not-need-an-effect)
+> Effects are an escape hatch from React's paradigm. - [React Documentation](https://react.dev/learn/you-might-not-need-an-effect)
 
 `useEffect` is powerful but dangerous. It's often a sign that you're fighting React's declarative nature. We prefer alternatives:
 
 ### Prefer These Over useEffect
 
+#### Derived state
 ```tsx
 // ❌ useEffect for derived state
 const [fullName, setFullName] = useState('');
@@ -82,13 +83,21 @@ useEffect(() => {
 
 // ✅ Derived state
 const fullName = `${firstName} ${lastName}`;
+```
 
+#### Data fetching
+```tsx
 // ❌ useEffect for API calls on mount
+const [user, setUser] = useState(null);
 useEffect(() => {
-  fetchUserData();
+  fetchUserData().then(user => setUser(user));
 }, []);
 
 // ✅ Server components or data fetching libraries (Tanstack Query)
+const user = useQuery({
+  queryKey: ['user'],
+  queryFn: fetchUserData
+})
 ```
 
 ### When useEffect is Acceptable
@@ -122,7 +131,6 @@ const [page, setPage] = useQueryState('page', parseAsInteger.withDefault(1));
 - **Testable** - Easy to test different states by changing URLs
 - **Predictable** - State changes are visible and trackable
 - **SEO friendly** - Search engines can understand your app state
-- **Type-safe** - With [nuqs](https://nuqs.47ng.com/), you get end-to-end type safety
 - **Simple API** - React.useState-like syntax that syncs with the URL automatically
 
 ### When Global State is Acceptable

@@ -14,8 +14,8 @@ const navLinks = [
 
 export function LandingPageLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
-      <nav className="bg-white/70 dark:bg-neutral-950/70 backdrop-blur-md border-b sticky top-0 z-50">
+    <div className="bg-white dark:bg-neutral-950">
+      <nav className="bg-white/70 dark:bg-neutral-950/70 backdrop-blur-md sticky top-0 z-50">
         <div className="h-16 container max-w-screen-xl mx-auto flex items-center">
           <Logo />
           <div className="flex items-center gap-2 ml-4">
@@ -26,7 +26,6 @@ export function LandingPageLayout({ children }: { children: React.ReactNode }) {
             ))}
           </div>
           <div className="ml-auto flex items-center">
-            <DocsSearch className="mr-4" />
             <Link
               href={GITHUB_URL}
               target="_blank"
