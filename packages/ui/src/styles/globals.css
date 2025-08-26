@@ -17,7 +17,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(54.6% 0.245 262.881);
+  --primary: oklch(20.5% 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -55,7 +55,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(62.3% 0.214 259.815);
+  --primary: oklch(43.9% 0 0);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -145,21 +145,6 @@
 }
 
 @layer utilities {
-  .focus-ring-button {
-    @apply data-[focus-visible]:outline-none data-[focus-visible]:ring-primary/30 data-[focus-visible]:ring-2 data-[focus-visible]:ring-offset-2;
-  }
-
-  .focus-ring-button-outline {
-    @apply data-[focus-visible]:border-primary data-[focus-visible]:outline-none data-[focus-visible]:ring-primary/15 data-[focus-visible]:ring-3 data-[focus-visible]:ring-offset-0;
-  }
-
-  .focus-ring-input {
-    @apply transition-all data-[focused]:border-primary data-[focused]:outline-none data-[focused]:ring-primary/15 data-[focused]:ring-3 data-[focused]:ring-offset-0 aria-invalid:border-destructive;
-  }
-
-  .focus-within-ring-input {
-    @apply transition-all data-[focus-within]:border-primary data-[focus-within]:outline-none data-[focus-within]:ring-primary/15 data-[focus-within]:ring-3 data-[focus-within]:ring-offset-0 aria-invalid:border-destructive;
-  }
 
   .button-3d {
     @apply border border-black/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),0_1px_3px_0_rgba(0,0,0,0.15)] dark:border-none dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)];

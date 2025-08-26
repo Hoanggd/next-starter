@@ -33,7 +33,7 @@ export function Select() {
 
   return (
     <AriaSelect className="w-full">
-      <Button variant="outline" className="justify-between w-full font-normal data-[hovered]:bg-background focus-ring-button-outline">
+      <Button variant="outline" className="justify-between w-full font-normal data-[hovered]:bg-background">
         <SelectValue>
           {({ defaultChildren, isPlaceholder }) => {
             return isPlaceholder ? (
