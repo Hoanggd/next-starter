@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { SearchIcon, XIcon } from "lucide-react"
+import { SearchIcon, XIcon } from "lucide-react";
 import {
   Button as AriaButton,
   ButtonProps as AriaButtonProps,
@@ -12,13 +12,11 @@ import {
   SearchFieldProps as AriaSearchFieldProps,
   ValidationResult as AriaValidationResult,
   composeRenderProps,
-  Text,
-} from "react-aria-components"
+} from "react-aria-components";
 
-import { cn } from "@workspace/ui/lib/utils"
+import { cn } from "@workspace/ui/lib/utils";
 
-
-import { FieldError, FieldGroup, Label } from "./field"
+import { FieldGroup } from "./field";
 
 function SearchField({ className, ...props }: AriaSearchFieldProps) {
   return (
@@ -28,7 +26,7 @@ function SearchField({ className, ...props }: AriaSearchFieldProps) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function SearchFieldInput({ className, ...props }: AriaInputProps) {
@@ -42,7 +40,7 @@ function SearchFieldInput({ className, ...props }: AriaInputProps) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function SearchFieldGroup({ className, ...props }: AriaGroupProps) {
@@ -60,7 +58,7 @@ function SearchFieldGroup({ className, ...props }: AriaGroupProps) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function SearchFieldClear({ className, ...props }: AriaButtonProps) {
@@ -80,24 +78,22 @@ function SearchFieldClear({ className, ...props }: AriaButtonProps) {
       )}
       {...props}
     />
-  )
+  );
 }
 
-interface SPSearchFieldProps extends AriaSearchFieldProps {
-  label?: string
-  description?: string
-  errorMessage?: string | ((validation: AriaValidationResult) => string)
-  placeholder?: string
+interface BsSearchFieldProps extends AriaSearchFieldProps {
+  description?: string;
+  errorMessage?: string | ((validation: AriaValidationResult) => string);
+  placeholder?: string;
 }
 
-function SPSearchField({
-  label,
+function BsSearchField({
   description,
   className,
   errorMessage,
-  placeholder = 'Search...',
+  placeholder = "Search...",
   ...props
-}: SPSearchFieldProps) {
+}: BsSearchFieldProps) {
   return (
     <SearchField
       className={composeRenderProps(className, (className) =>
@@ -105,22 +101,18 @@ function SPSearchField({
       )}
       {...props}
     >
-      {label && <Label>{label}</Label>}
       <FieldGroup>
-        <SearchIcon aria-hidden className="size-4 text-muted-foreground" />
+        <SearchIcon
+          aria-hidden
+          className="size-4 text-muted-foreground pointer-events-none"
+        />
         <SearchFieldInput placeholder={placeholder} />
         <SearchFieldClear>
           <XIcon aria-hidden className="size-4" />
         </SearchFieldClear>
       </FieldGroup>
-      {description && (
-        <Text className="text-sm text-muted-foreground" slot="description">
-          {description}
-        </Text>
-      )}
-      <FieldError>{errorMessage}</FieldError>
     </SearchField>
-  )
+  );
 }
 
 export {
@@ -128,6 +120,6 @@ export {
   SearchFieldGroup,
   SearchFieldInput,
   SearchFieldClear,
-  SPSearchField,
-}
-export type { SPSearchFieldProps }
+  BsSearchField,
+};
+export type { BsSearchFieldProps };

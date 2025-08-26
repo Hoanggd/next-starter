@@ -1,5 +1,5 @@
 import { Input } from "@workspace/ui/components/textfield";
 
-export const InputFile = () => {
+export function InputFile() {
   return <Input type="file" />;
-};
+}

@@ -1,5 +1,5 @@
 import { Input } from "@workspace/ui/components/textfield";
 
-export const InputDisabled = () => {
+export function InputDisabled() {
   return <Input disabled type="email" placeholder="Email" />;
-};
+}

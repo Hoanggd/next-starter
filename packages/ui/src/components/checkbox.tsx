@@ -14,7 +14,7 @@ import {
 
 import { cn } from "@workspace/ui/lib/utils";
 
-import { FieldError, Label, labelVariants } from "./field";
+import { Label, labelVariants } from "./field";
 
 const CheckboxGroup = AriaCheckboxGroup;
 
@@ -90,7 +90,6 @@ function JollyCheckboxGroup({
               {description}
             </Text>
           )}
-          <FieldError>{errorMessage}</FieldError>
         </>
       ))}
     </CheckboxGroup>
