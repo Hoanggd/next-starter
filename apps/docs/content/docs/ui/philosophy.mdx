@@ -19,18 +19,18 @@ We prioritize **cognitive load reduction** above all else. Every line of code sh
 
 ```js
 // ❌ Complex
-if val > someConstant // 🧠+
+if (val > someConstant // 🧠+
     && (condition2 || condition3) // 🧠+++, prev cond should be true, one of c2 or c3 has be true
-    && (condition4 && !condition5) { // 🤯, we are messed up by this point
+    && (condition4 && !condition5)) { // 🤯, we are messed up by this point
     ...
 }
 
 // ✅ Simple
-isValid = val > someConstant
-isAllowed = condition2 || condition3
-isSecure = condition4 && !condition5 
+let isValid = val > someConstant
+let isAllowed = condition2 || condition3
+let isSecure = condition4 && !condition5 
 // 🧠, we don't need to remember the conditions, there are descriptive variables
-if isValid && isAllowed && isSecure {
+if (isValid && isAllowed && isSecure) {
     ...
 }
 ```
@@ -38,7 +38,7 @@ if isValid && isAllowed && isSecure {
 ### Example: "Clever" vs. "Stupid"
 ```js
 // ❌ "Clever" - looks like magic
-const isEven = n => !(n & 1);
+let isEven = n => !(n & 1);
 
 // ✅ "Stupid" - obvious
 function isEven(n) {
