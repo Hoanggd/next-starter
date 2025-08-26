@@ -7,7 +7,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
-import { Input } from "@workspace/ui/components/input";
+import { Input } from "@workspace/ui/components/textfield";
 import { Select } from "@workspace/ui/components/select";
 import { Textarea } from "@workspace/ui/components/textarea";
 import { useFormContext } from "react-hook-form";
@@ -131,7 +131,7 @@ function Header() {
   const form = useFormContext<FormInputs>();
   return (
     <div className="flex justify-between items-center">
-      <h2 className="uppercase text-gray-500 text-sm font-semibold">Profile</h2>
+      <h2 className="uppercase text-neutral-500 text-sm font-semibold">Profile</h2>
       <FormField
         control={form.control}
         name="isPublic"

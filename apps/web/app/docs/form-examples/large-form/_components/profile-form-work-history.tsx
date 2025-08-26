@@ -9,7 +9,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
-import { Input } from "@workspace/ui/components/input";
+import { Input } from "@workspace/ui/components/textfield";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import { FormInputs } from "./utils";
 
@@ -22,7 +22,7 @@ export function WorkHistory() {
 
   return (
     <div className="space-y-2 py-6">
-      <h2 className="uppercase text-gray-500 text-sm font-semibold">
+      <h2 className="uppercase text-neutral-500 text-sm font-semibold">
         Work History
       </h2>
       {fields.length > 0 && (

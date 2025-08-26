@@ -10,10 +10,17 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
-import { Input } from "@workspace/ui/components/input";
-import { Select, Option, optionSchema } from "@workspace/ui/components/select";
+import { Input } from "@workspace/ui/components/textfield";
+import { Select } from "@workspace/ui/components/select";
 import { useForm } from "react-hook-form";
 import { z } from "@workspace/ui/lib/zod";
+
+export const optionSchema = z.object({
+  value: z.string(),
+  label: z.string(),
+});
+
+export type Option = z.infer<typeof optionSchema>;
 
 type EndUserFormInputs = {
   name?: string;
@@ -59,10 +66,7 @@ export default function ConditionalFieldsForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <h1 className="text-2xl font-semibold">Create User</h1>
         <FormField
           control={form.control}

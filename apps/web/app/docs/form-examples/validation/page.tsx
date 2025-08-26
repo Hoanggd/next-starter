@@ -9,7 +9,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
-import { Input } from "@workspace/ui/components/input";
+import { Input } from "@workspace/ui/components/textfield";
 import { useForm } from "react-hook-form";
 import { z } from "@workspace/ui/lib/zod";
 

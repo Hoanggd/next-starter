@@ -1,56 +1,33 @@
-import { Checkbox } from '@workspace/ui/components/checkbox'
-import { FormLabel } from '@workspace/ui/components/form'
-import { cn } from '@workspace/ui/lib/utils'
-import React from 'react'
-import { z } from '@workspace/ui/lib/zod'
+import { CheckboxGroup as AriaCheckboxGroup, Checkbox, Label } from "react-aria-components";
 
-export const optionSchema = z.object({
-  value: z.string(),
-  label: z.string(),
-})
-
-export type Option = z.infer<typeof optionSchema>
-
-export const CheckboxGroup = <S extends Option>({
-  options,
-  value = [],
-  onChange,
-  onBlur,
-  disabled,
-  className,
-  'aria-invalid': ariaInvalid,
-}: {
-  options: S[]
-  value: S[] | undefined
-  onChange: (value: S[]) => void
-  onBlur?: () => void
-  disabled?: boolean
-  className?: string
-  'aria-invalid'?: boolean
-}) => {
-  const id = React.useId()
-
+export function CheckboxGroup() {
   return (
-    <div className={cn('flex flex-col gap-2', className)}>
-      {options.map((option) => {
-        const optionId = `${id}-${option.value}`
-
-        return (
-          <div className="flex items-center gap-2" key={option.value}>
-            <Checkbox
-              id={optionId}
-              checked={value.some((v) => v.value === option.value)}
-              onCheckedChange={(checked) => {
-                onChange(checked ? [...value, option] : value.filter((v) => v.value !== option.value))
-              }}
-              onBlur={() => onBlur?.()}
-              aria-invalid={ariaInvalid}
-              disabled={disabled}
-            />
-            <FormLabel htmlFor={optionId}>{option.label}</FormLabel>
-          </div>
-        )
-      })}
-    </div>
-  )
+    <AriaCheckboxGroup>
+      <Label>Favorite sports</Label>
+      <Checkbox value="soccer">
+        <div className="checkbox" aria-hidden="true">
+          <svg viewBox="0 0 18 18">
+            <polyline points="1 9 7 14 15 4" />
+          </svg>
+        </div>
+        Soccer
+      </Checkbox>
+      <Checkbox value="baseball">
+        <div className="checkbox" aria-hidden="true">
+          <svg viewBox="0 0 18 18">
+            <polyline points="1 9 7 14 15 4" />
+          </svg>
+        </div>
+        Baseball
+      </Checkbox>
+      <Checkbox value="basketball">
+        <div className="checkbox" aria-hidden="true">
+          <svg viewBox="0 0 18 18">
+            <polyline points="1 9 7 14 15 4" />
+          </svg>
+        </div>
+        Basketball
+      </Checkbox>
+    </AriaCheckboxGroup>
+  );
 }

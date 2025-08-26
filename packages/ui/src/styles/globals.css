@@ -4,12 +4,15 @@
 @source "../**/*.{ts,tsx}";
 
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background-secondary: oklch(98.5% 0 0);
+  --background-tertiary: oklch(97% 0 0);
+  --foreground: oklch(20.5% 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -22,7 +25,7 @@
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: oklch(57.7% 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -44,13 +47,15 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: oklch(20.5% 0 0);
+  --background-secondary: oklch(24.9% 0 0);
+  --background-tertiary: oklch(30.1% 0 0);
+  --foreground: oklch(92.2% 0 0);
   --card: oklch(0.145 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(54.6% 0.245 262.881);
+  --primary: oklch(62.3% 0.214 259.815);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -58,10 +63,10 @@
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
+  --destructive: oklch(63.7% 0.237 25.331);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
+  --border: oklch(32.504% 0.00004 271.152);
+  --input: oklch(35.233% 0.00004 271.152);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
@@ -80,6 +85,8 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-tertiary: var(--background-tertiary);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -116,7 +123,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-  --shadow-popover: 0 10px 25px 0 rgba(0,0,0,0.1);
+  --shadow-popover: 0 10px 25px 0 rgba(0, 0, 0, 0.1);
 }
 
 @layer base {
@@ -126,10 +133,35 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .dark .shiki,
+  .dark .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }
 
 @layer utilities {
-  .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-primary/15 focus-visible:ring-3 focus-visible:border-primary;
+  .focus-ring-button {
+    @apply data-[focus-visible]:outline-none data-[focus-visible]:ring-primary/30 data-[focus-visible]:ring-2 data-[focus-visible]:ring-offset-2;
+  }
+
+  .focus-ring-button-outline {
+    @apply data-[focus-visible]:border-primary data-[focus-visible]:outline-none data-[focus-visible]:ring-primary/15 data-[focus-visible]:ring-3 data-[focus-visible]:ring-offset-0;
+  }
+
+  .focus-ring-input {
+    @apply transition-all data-[focused]:border-primary data-[focused]:outline-none data-[focused]:ring-primary/15 data-[focused]:ring-3 data-[focused]:ring-offset-0 aria-invalid:border-destructive;
+  }
+
+  .focus-within-ring-input {
+    @apply transition-all data-[focus-within]:border-primary data-[focus-within]:outline-none data-[focus-within]:ring-primary/15 data-[focus-within]:ring-3 data-[focus-within]:ring-offset-0 aria-invalid:border-destructive;
+  }
+
+  .button-3d {
+    @apply border border-black/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),0_1px_3px_0_rgba(0,0,0,0.15)] dark:border-none dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)];
   }
 }
