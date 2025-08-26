@@ -35,7 +35,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    <div className="mdx [&>*]:px-10">
+    <div className="mdx [&>*]:px-5 lg:[&>*]:px-10">
       <Component components={components} />
     </div>
   );
