@@ -27,7 +27,7 @@ const Input = ({ className, ...props }: AriaInputProps) => {
           "shadow-sm flex h-8 w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground",
           "ring-inset ring ring-input",
           /* Focus Within */
-          "transition-all data-[focused]:ring-sky-500 data-[focused]:ring-2 aria-invalid:ring-destructive",
+          "transition-all data-[focused]:ring-primary data-[focused]:ring-2 aria-invalid:ring-destructive",
           /* Disabled */
           "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
           /* Resets */
@@ -48,7 +48,7 @@ const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
           "shadow-sm flex min-h-[80px] w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground",
           "ring-inset ring ring-input",
           /* Focus Within */
-          "transition-all data-[focused]:ring-sky-500 data-[focused]:ring-2 aria-invalid:ring-destructive",
+          "transition-all data-[focused]:ring-primary data-[focused]:ring-2 aria-invalid:ring-destructive",
           /* Disabled */
           "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
           /* Resets */

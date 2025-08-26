@@ -18,7 +18,7 @@ const buttonVariants = cva(
     /* Disabled */
     "data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ",
     /* Focus Visible */
-    "data-[focus-visible]:outline-none data-[focus-visible]:ring-sky-500/40 data-[focus-visible]:ring-2 data-[focus-visible]:ring-offset-2",
+    "data-[focus-visible]:outline-none data-[focus-visible]:ring-primary/40 data-[focus-visible]:ring-2 data-[focus-visible]:ring-offset-2",
     /* Resets */
     "focus-visible:outline-none",
   ],
@@ -41,7 +41,7 @@ const buttonVariants = cva(
         default: "h-8 px-3 py-2",
         sm: "h-7 px-2",
         lg: "h-9 px-6 rounded-lg",
-        xl: "h-10 px-6 text-base rounded-lg",
+        xl: "h-11 px-6 text-base rounded-lg",
         icon: "size-8",
       },
     },

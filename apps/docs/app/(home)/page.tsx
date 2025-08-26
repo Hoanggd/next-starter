@@ -25,9 +25,9 @@ export default function Home() {
         <HeroBackground />
         <div className="relative px-4 py-40 mx-auto max-w-7xl">
           <div className="text-center">
-            <h1 className="text-6xl font-bold tracking-tight mb-6 text-muted-foreground">
+            <h1 className="text-6xl font-bold tracking-tight mb-6">
               Build Production Apps
-              <div className="text-foreground">Faster Than Ever</div>
+              <div className="text-primary">Faster Than Ever</div>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
               A modern Next.js boilerplate with opinionated project structure, 
