@@ -17,22 +17,32 @@ We prioritize **cognitive load reduction** above all else. Every line of code sh
 
 ### Example: Simple vs. Complex
 
-```tsx
-// ❌ Complex - requires mental parsing
-const processData = (data) => data
-  .filter(x => x.status === 'active')
-  .map(x => ({ ...x, processed: true }))
-  .reduce((acc, x) => ({ ...acc, [x.id]: x }), {});
+```js
+// ❌ Complex
+if val > someConstant // 🧠+
+    && (condition2 || condition3) // 🧠+++, prev cond should be true, one of c2 or c3 has be true
+    && (condition4 && !condition5) { // 🤯, we are messed up by this point
+    ...
+}
 
-// ✅ Simple - immediately clear
-const activeItems = data.filter(item => item.status === 'active');
-const processedItems = activeItems.map(item => ({
-  ...item,
-  processed: true
-}));
-const itemsById = {};
-for (const item of processedItems) {
-   itemsById[item.id] = item;
+// ✅ Simple
+isValid = val > someConstant
+isAllowed = condition2 || condition3
+isSecure = condition4 && !condition5 
+// 🧠, we don't need to remember the conditions, there are descriptive variables
+if isValid && isAllowed && isSecure {
+    ...
+}
+```
+
+### Example: "Clever" vs. "Stupid"
+```js
+// ❌ "Clever" - looks like magic
+const isEven = n => !(n & 1);
+
+// ✅ "Stupid" - obvious
+function isEven(n) {
+  return n % 2 === 0;
 }
 ```
 
@@ -160,7 +170,3 @@ Our philosophy can be distilled into these core principles:
 5. **Pixel perfection** - Attention to detail builds trust
 
 Remember: **The best code is the code that's easiest to change.** When in doubt, choose the simpler option. You can always make it more sophisticated later, but it's much harder to simplify complex code.
-
----
-
-*"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."* - Martin Fowler

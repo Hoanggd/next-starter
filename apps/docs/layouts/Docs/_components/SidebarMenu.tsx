@@ -61,8 +61,12 @@ function getMenuGroups(module: string): MenuGroup[] {
             href: "/docs/ui/checkbox",
           },
           {
-            title: "Textfield",
-            href: "/docs/ui/textfield",
+            title: "Input",
+            href: "/docs/ui/input",
+          },
+          {
+            title: "Textarea",
+            href: "/docs/ui/textarea",
           },
         ],
       },

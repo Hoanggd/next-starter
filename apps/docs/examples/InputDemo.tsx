@@ -1,5 +1,5 @@
 import { Input } from "@workspace/ui/components/textfield";
 
-export const TextfieldDemo = () => {
+export const InputDemo = () => {
   return <Input placeholder="Email" />;
 };

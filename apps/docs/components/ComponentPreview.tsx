@@ -20,17 +20,17 @@ export async function ComponentPreview({
 
   return (
     <div className="border-b p-10 pt-0 w-full">
-      <div className="p-2 space-y-1.5 border rounded-xl bg-background">
+      <div className="p-1.5 space-y-1.5 border rounded-lg bg-background">
         <div
           className={cn(
-            "p-10 flex items-center justify-center not-prose",
+            "py-10 not-prose text-center",
             className
           )}
         >
           <Preview name={name} />
         </div>
 
-        <div className="relative border rounded-md overflow-hidden ">
+        <div className="relative border rounded-sm overflow-hidden ">
           <CopyToClipboard
             text={code}
             className="absolute right-2 top-2 z-[1]"
@@ -39,7 +39,7 @@ export async function ComponentPreview({
             <ScrollArea className="grid">
               <div
                 dangerouslySetInnerHTML={{ __html: out }}
-                className="max-h-[340px] [&>pre]:my-0 [&>pre]:rounded-none"
+                className="max-h-[400px] [&>pre]:my-0 [&>pre]:rounded-none"
               ></div>
             </ScrollArea>
           </div>
