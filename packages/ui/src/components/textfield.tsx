@@ -20,7 +20,7 @@ const Input = ({ className, ...props }: AriaInputProps) => {
           /* Focus Within */
           "transition-all data-[focused]:ring-primary data-[focused]:ring-2 aria-invalid:ring-destructive",
           /* Disabled */
-          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-80",
           /* Resets */
           "focus-visible:outline-none",
           className
@@ -41,7 +41,7 @@ const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
           /* Focus Within */
           "transition-all data-[focused]:ring-primary data-[focused]:ring-2 aria-invalid:ring-destructive",
           /* Disabled */
-          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-80",
           /* Resets */
           "focus-visible:outline-none",
           className

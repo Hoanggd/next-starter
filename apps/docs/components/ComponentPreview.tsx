@@ -19,7 +19,7 @@ export async function ComponentPreview({
   const out = await highlightCode(code);
 
   return (
-    <div className="border-b p-5! lg:p-10! pt-0 w-full">
+    <div className="border-b p-5! lg:p-10! pt-0! lg:pt-0! w-full">
       <div className="p-1.5 space-y-1.5 border rounded-lg bg-background">
         <div
           className={cn(
