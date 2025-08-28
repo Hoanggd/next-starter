@@ -57,8 +57,8 @@ function getMenuGroups(module: string): MenuGroup[] {
         title: "Forms",
         items: [
           {
-            title: "Checkbox",
-            href: "/docs/ui/checkbox",
+            title: "Form",
+            href: "/docs/ui/form",
           },
           {
             title: "Input",
@@ -67,6 +67,26 @@ function getMenuGroups(module: string): MenuGroup[] {
           {
             title: "Textarea",
             href: "/docs/ui/textarea",
+          },
+          {
+            title: "Number Field",
+            href: "/docs/ui/number-field",
+          },
+          {
+            title: "Checkbox",
+            href: "/docs/ui/checkbox",
+          },
+          {
+            title: "Checkbox Group",
+            href: "/docs/ui/checkbox-group",
+          },
+          {
+            title: "Radio Group",
+            href: "/docs/ui/radio-group",
+          },
+          {
+            title: "Switch",
+            href: "/docs/ui/switch",
           },
         ],
       },
