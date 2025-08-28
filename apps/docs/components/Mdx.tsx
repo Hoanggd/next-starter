@@ -11,9 +11,6 @@ type MdxProps = {
 const components = {
   ComponentPreview,
   Button,
-  h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className={cn(className)} {...props} />
-  ),
   pre: ({ children, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
     let lang = "";
 
@@ -29,6 +26,9 @@ const components = {
       </MdxSnippet>
     );
   },
+  blockquote: ({ ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
+    <blockquote style={{ quotes: "none" }} {...props} />
+  ),
 };
 
 export function Mdx({ code }: MdxProps) {

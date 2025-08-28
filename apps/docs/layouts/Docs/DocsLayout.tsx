@@ -17,9 +17,9 @@ export function DocsLayout({
 }) {
   return (
     <>
-      <div className="container w-full max-w-screen-xl mx-auto">
+      <div className="container w-full max-w-[1400px] mx-auto">
         {/* header  */}
-        <div className="fixed h-16 max-w-screen-xl w-full z-20">
+        <div className="fixed h-16 max-w-[1400px] w-full z-20">
           <CrossIcon className="max-xl:hidden absolute top-16 left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
           <CrossIcon className="max-xl:hidden absolute top-16 right-[0.5px] translate-x-1/2 -translate-y-1/2" />
 
