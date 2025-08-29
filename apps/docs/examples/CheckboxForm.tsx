@@ -15,7 +15,6 @@ import {
 import { Checkbox } from "@workspace/ui/components/checkbox";
 import { CheckboxGroup } from "@workspace/ui/components/checkbox";
 import { TextArea } from "@workspace/ui/components/textfield";
-import { z } from "@workspace/ui/lib/zod";
 
 interface FormData {
   interest: Array<string>;
@@ -52,14 +51,16 @@ export function CheckboxForm() {
           name="interest"
           render={({ field }) => (
             <FormItem>
-              <CheckboxGroup {...field}>
-                <FormLabel>Select your interests</FormLabel>
-                <div className="grid grid-cols-3 gap-4">
-                  <Checkbox value="reading">Reading</Checkbox>
-                  <Checkbox value="writing">Writing</Checkbox>
-                  <Checkbox value="coding">Coding</Checkbox>
-                </div>
-              </CheckboxGroup>
+              <FormControl>
+                <CheckboxGroup {...field}>
+                  <FormLabel>Select your interests</FormLabel>
+                  <div className="grid grid-cols-3 gap-4">
+                    <Checkbox value="reading">Reading</Checkbox>
+                    <Checkbox value="writing">Writing</Checkbox>
+                    <Checkbox value="coding">Coding</Checkbox>
+                  </div>
+                </CheckboxGroup>
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}

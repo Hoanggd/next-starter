@@ -15,8 +15,6 @@ const labelVariants = cva([
   "text-sm font-medium",
   /* Disabled */
   "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
-  /* Invalid */
-  "group-data-[invalid]:text-destructive",
 ]);
 
 const Label = ({ className, ...props }: AriaLabelProps) => (

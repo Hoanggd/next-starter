@@ -13,7 +13,7 @@ import {
 
 import { cn } from "@workspace/ui/lib/utils";
 
-import { Label, labelVariants } from "./field";
+import { labelVariants } from "./field";
 
 const RadioGroup = ({ className, ...props }: AriaRadioGroupProps) => {
   return (
@@ -21,7 +21,8 @@ const RadioGroup = ({ className, ...props }: AriaRadioGroupProps) => {
       className={composeRenderProps(className, (className, renderProps) =>
         cn(
           "group/radiogroup flex flex-col flex-wrap gap-2",
-          renderProps.orientation === "horizontal" && "flex-row items-center gap-4",
+          renderProps.orientation === "horizontal" &&
+            "flex-row items-center gap-4",
           className
         )
       )}
@@ -35,7 +36,7 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
     <AriaRadio
       className={composeRenderProps(className, (className) =>
         cn(
-          "group/radio flex items-center gap-x-2 text-sm font-medium",
+          "group/radio flex items-center gap-x-2 text-sm",
           /* Disabled */
           "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
           labelVariants,
@@ -74,34 +75,4 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
   );
 };
 
-interface BsRadioGroupProps extends AriaRadioGroupProps {
-  label?: string;
-}
-
-function BsRadioGroup({
-  label,
-  className,
-  children,
-  ...props
-}: BsRadioGroupProps) {
-  return (
-    <RadioGroup
-      className={composeRenderProps(className, (className) =>
-        cn("group/radiogroup flex-col items-start", className)
-      )}
-      {...props}
-    >
-      {composeRenderProps(children, (children) => (
-        <>
-          <Label>{label}</Label>
-          <div className="flex flex-col flex-wrap gap-2 group-data-[orientation=horizontal]/radiogroup:flex-row">
-            {children}
-          </div>
-        </>
-      ))}
-    </RadioGroup>
-  );
-}
-
-export { RadioGroup, Radio, BsRadioGroup };
-export type { BsRadioGroupProps };
+export { RadioGroup, Radio };

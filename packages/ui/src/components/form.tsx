@@ -75,7 +75,7 @@ const FormItemContext = React.createContext<FormItemContextValue>(
 
 function FormItem({
   className,
-  flow = 'column',
+  flow = "column",
   ...props
 }: React.ComponentProps<"div"> & { flow?: "row" | "column" }) {
   const id = React.useId();
@@ -116,6 +116,7 @@ function FormLabel({
 function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
   const { error, formItemId, formDescriptionId, formMessageId } =
     useFormField();
+  const reactAreaProps = { isInvalid: !!error };
 
   return (
     <Slot
@@ -127,6 +128,7 @@ function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
           : `${formDescriptionId} ${formMessageId}`
       }
       aria-invalid={!!error}
+      {...reactAreaProps}
       {...props}
     />
   );
