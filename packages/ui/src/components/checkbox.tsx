@@ -22,7 +22,7 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
   <AriaCheckbox
     className={composeRenderProps(className, (className) =>
       cn(
-        "group/checkbox flex items-center gap-x-2",
+        "group/checkbox flex items-center gap-x-2 text-sm font-medium",
         /* Disabled */
         "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
         labelVariants,
@@ -35,11 +35,13 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
       <>
         <div
           className={cn(
-            "flex size-4 shrink-0 items-center justify-center rounded-sm border border-primary text-current ring-offset-background",
+            "transition-all flex size-4 shrink-0 items-center justify-center rounded-[5px] border bg-background-secondary text-white ring-offset-background",
             /* Focus Visible */
-            "group-data-[focus-visible]/checkbox:outline-none group-data-[focus-visible]/checkbox:ring-2 group-data-[focus-visible]/checkbox:ring-ring group-data-[focus-visible]/checkbox:ring-offset-2",
+            "group-data-[focus-visible]/checkbox:outline-none group-data-[focus-visible]/checkbox:ring-2 group-data-[focus-visible]/checkbox:ring-primary/40 group-data-[focus-visible]/checkbox:ring-offset-2",
             /* Selected */
-            "group-data-[indeterminate]/checkbox:bg-primary group-data-[selected]/checkbox:bg-primary group-data-[indeterminate]/checkbox:text-primary-foreground  group-data-[selected]/checkbox:text-primary-foreground",
+            "group-data-[indeterminate]/checkbox:bg-primary group-data-[selected]/checkbox:bg-primary group-data-[indeterminate]/checkbox:border-black/10 group-data-[selected]/checkbox:border-black/10 group-data-[indeterminate]/checkbox:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] group-data-[selected]/checkbox:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]",
+            /* Selected Dark */
+            "dark:group-data-[indeterminate]/checkbox:border-none dark:group-data-[selected]/checkbox:border-none",
             /* Disabled */
             "group-data-[disabled]/checkbox:cursor-not-allowed group-data-[disabled]/checkbox:opacity-50",
             /* Invalid */
