@@ -2,7 +2,7 @@
 import { RadioGroup, Radio } from '@workspace/ui/components/radio-group'
 import { useState } from "react"
 
-export default function RadioGroupForm() {
+export function RadioGroupForm() {
   const [shippingMethod, setShippingMethod] = useState<string>("")
   const [paymentMethod, setPaymentMethod] = useState<string>("")
 
