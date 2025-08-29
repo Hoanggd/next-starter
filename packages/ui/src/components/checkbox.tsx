@@ -6,9 +6,7 @@ import {
   Checkbox as AriaCheckbox,
   CheckboxGroup as AriaCheckboxGroup,
   CheckboxGroupProps as AriaCheckboxGroupProps,
-  ValidationResult as AriaValidationResult,
   composeRenderProps,
-  Text,
   type CheckboxProps as AriaCheckboxProps,
 } from "react-aria-components";
 
@@ -16,7 +14,14 @@ import { cn } from "@workspace/ui/lib/utils";
 
 import { Label, labelVariants } from "./field";
 
-const CheckboxGroup = AriaCheckboxGroup;
+const CheckboxGroup = ({ className, ...props }: AriaCheckboxGroupProps) => {
+  return (
+    <AriaCheckboxGroup
+      className={cn("grid gap-2", className)}
+      {...props}
+    />
+  );
+};
 
 const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
   <AriaCheckbox
@@ -35,7 +40,7 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
       <>
         <div
           className={cn(
-            "transition-all flex size-4 shrink-0 items-center justify-center rounded-[5px] border bg-background-secondary text-white ring-offset-background",
+            "flex size-4 shrink-0 items-center justify-center rounded-[5px] border bg-background-secondary text-white ring-offset-background",
             /* Focus Visible */
             "group-data-[focus-visible]/checkbox:outline-none group-data-[focus-visible]/checkbox:ring-2 group-data-[focus-visible]/checkbox:ring-primary/40 group-data-[focus-visible]/checkbox:ring-offset-2",
             /* Selected */
@@ -43,7 +48,7 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
             /* Selected Dark */
             "dark:group-data-[indeterminate]/checkbox:border-none dark:group-data-[selected]/checkbox:border-none",
             /* Disabled */
-            "group-data-[disabled]/checkbox:cursor-not-allowed group-data-[disabled]/checkbox:opacity-50",
+            "group-data-[disabled]/checkbox:cursor-not-allowed group-data-[disabled]/checkbox:opacity-80",
             /* Invalid */
             "group-data-[invalid]/checkbox:border-destructive group-data-[invalid]/checkbox:group-data-[selected]/checkbox:bg-destructive group-data-[invalid]/checkbox:group-data-[selected]/checkbox:text-destructive-foreground",
             /* Resets */

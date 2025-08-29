@@ -77,12 +77,8 @@ function getMenuGroups(module: string): MenuGroup[] {
             href: "/docs/ui/checkbox",
           },
           {
-            title: "Checkbox Group",
-            href: "/docs/ui/checkbox-group",
-          },
-          {
-            title: "Radio Group",
-            href: "/docs/ui/radio-group",
+            title: "Radio",
+            href: "/docs/ui/radio",
           },
           {
             title: "Switch",

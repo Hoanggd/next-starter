@@ -20,30 +20,30 @@ export function CheckboxIndeterminate() {
   };
 
   return (
-    <div className="space-y-3">
+    <div className="grid gap-2">
       <Checkbox
         isSelected={allChecked}
         isIndeterminate={isIndeterminate}
-        onSelectionChange={handleAllChange}
+        onChange={handleAllChange}
       >
         Select all
       </Checkbox>
-      <div className="ml-4 space-y-2">
+      <div className="ml-4 grid gap-2">
         <Checkbox
           isSelected={checkedItems[0]}
-          onSelectionChange={(checked) => handleItemChange(0, checked)}
+          onChange={(checked) => handleItemChange(0, checked)}
         >
           Item 1
         </Checkbox>
         <Checkbox
           isSelected={checkedItems[1]}
-          onSelectionChange={(checked) => handleItemChange(1, checked)}
+          onChange={(checked) => handleItemChange(1, checked)}
         >
           Item 2
         </Checkbox>
         <Checkbox
           isSelected={checkedItems[2]}
-          onSelectionChange={(checked) => handleItemChange(2, checked)}
+          onChange={(checked) => handleItemChange(2, checked)}
         >
           Item 3
         </Checkbox>

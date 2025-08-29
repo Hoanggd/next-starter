@@ -23,7 +23,7 @@ export async function ComponentPreview({
       <div className="p-1.5 space-y-1.5 border rounded-lg bg-background">
         <div
           className={cn(
-            "py-10 not-prose flex items-center justify-center",
+            "py-10 not-prose flex items-center justify-center px-5",
             className
           )}
         >

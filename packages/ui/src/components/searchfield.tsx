@@ -21,6 +21,7 @@ import { FieldGroup } from "./field";
 function SearchField({ className, ...props }: AriaSearchFieldProps) {
   return (
     <AriaSearchField
+      aria-label="Search"
       className={composeRenderProps(className, (className) =>
         cn("group", className)
       )}
